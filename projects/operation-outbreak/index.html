@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation Outbreak | Editorial Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body id="top">
+
+    <!-- PORTFOLIO NAVIGATION BAR -->
+    <nav id="main-nav">
+        <a href="../../index.html" class="nav-logo">Yinan Dong</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="../../index.html#digital-product">Digital Product</a>
+            <a href="../../index.html#web">Web</a>
+            <a href="../../index.html#exhibition">Exhibition</a>
+        </div>
+    </nav>
+
+    <!-- FLOATING NAVIGATION BUTTONS -->
+    <a href="../../index.html" class="float-btn float-home" title="Home">
+        <img src="./img/yinan-logo.png" alt="Home" class="float-btn-icon">
+    </a>
+    <a href="#top" class="float-btn float-top" title="Back to Top">↑</a>
+
+    <!-- ===== HERO SECTION ===== -->
+    <header class="container">
+        <span class="hero-label">Case Study • 2021 Sep - 2022 May</span>
+        
+        <h1>Redesign Operation Outbreak</h1>
+        <p class="hero-sub">
+            Designing Engagement & Data Quality in a Large-Scale Epidemiological Simulation
+        </p>
+        
+        <!-- Meta Grid: Role, Team, Awards -->
+        <div class="meta-grid">
+            <div class="meta-column">
+                <h4>ROLE</h4>
+                <ul>
+                    <li>UX/UI Design Lead</li>
+                    <li>Interaction design & Visual System</li>
+                    <li>Gamification strategy</li>
+                    <li>User Research</li>
+                </ul>
+            </div>
+            <div class="meta-column">
+                <h4>Team & Partners</h4>
+                <ul>
+                    <li>Lab PIs (Product Managers)</li>
+                    <li>3 Engineers & 2 Designers</li>
+                    <li>5 Bioinformatic Researchers</li>
+                    <li>Teachers & Program Coordinators</li>
+                    <li>Broad Institute & Umass Chan</li>
+        
+                </ul>
+            </div>
+            <div class="meta-column">
+                <h4>RECOGNITION</h4>
+                <ul>
+                    <li><a href="https://www.nytimes.com/2021/01/21/health/coronavirus-education-high-school.html" target="_blank" class="re-link">New York Times Article (2021)</a></li>
+                    <li><a href="https://www.popsci.com/technology/operation-outbreak-pandemic-simulation/" target="_blank" class="re-link">Popular Science Article (2022)</a></li>
+                    <li><a href="https://www.moore.org/article-detail?newsUrlName=learning-from-the-pandemic-experimentation-and-new-opportunities-for-science-learning" target="_blank" class="re-link">Gordon and Betty Moore Foundation (2023)</a></li>
+                    <li><a href="https://www.reimagine-education.com/operationoutbreak/" target="_blank" class="re-link">Reimagine Education Award (2023)</a></li>
+                    <li><a href="https://colabobio.medium.com/a-multimodal-dataset-for" target="_blank" class="re-link">The Medium Article (2023)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="full-span-image" style="margin-top: 40px; height: 650px">
+            <video width="100%" height="100%" preload="metadata" autoplay muted loop style="border-radius: 8px; display: block;">
+                <source src="./img/OOHomevideosmaller.mp4" type="video/mp4">
+                <img src="./img/Onboarding.jpg" alt="Travel Health Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </video>
+        </div> 
+    </header>
+
+    <!-- ===== IMPACT SECTION ===== -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <strong>80%</strong>
+                    <span>Usability Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                    <strong>↑ 62%</strong>
+                    <span>Improvement in Data Quality</span>
+                </div>
+                <div class="stat-item">
+                    <strong>57</strong>
+                    <span>Schools Deployed Globally</span>
+                </div>
+               
+            </div>
+            
+            <div class="impact-overview">
+                <p>
+                    "I led the UX and product design efforts to redesign the mobile experience — focusing on engagement, usability, and data reliability — to support both scientific research and large-scale participant."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 1: THE CONTEXT/OVERVIEW ===== -->
+    <section class="content-section container">
+        <div class="side-by-side-grid">
+            <div>
+                <h3>THE OVERVIEW</h3>
+                <h2> Designing for Behavior, Not Just Screens</h2>
+                <p>
+                    Operation Outbreak (OO) is an epidemiological education and research platform that uses a mobile app (iOS and Android) 
+                    to spread a fictional pathogen via Bluetooth across participating phones, offering a low-stakes simulation of a high-stakes scenario.
+                </p>
+                <p>
+                    The project began as an in-person classroom experiment in 2017 and evolved into a digital platform in 2019. 
+                    However, the early digital version struggled to translate the physical experience into an engaging, scalable product.
+                </p>
+            </div>
+            
+            <div class="side-image-container">
+                <div class="carousel-container" id="carousel-1">
+                    <button class="nav-arrow prev" onclick="moveCarousel('carousel-1', -1)">&#10094;</button>
+                    <div class="carousel-slide active" style="background-image: url('./img/download.jpeg');"></div>
+                    <div class="carousel-slide" style="background-image: url('./img/sar_4.jpeg');"></div>
+                    <div class="carousel-slide" style="background-image: url('./img/sar_2.jpeg');"></div>
+                    <button class="nav-arrow next" onclick="moveCarousel('carousel-1', 1)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-2-col">
+            <div class="col-right">
+                <div class="summary-overview" style="margin-top: 60px; color: #3f3a3a;">        
+                    <h3>What I Deisgned</h3>
+                    <p> 
+                        Transformed the classroom-based simulation into a fully digital experience designed to keep students engaged while producing high-quality research data.
+                        This included redesigning 4 core features, introducing 2 new features, building the gamification system, reworking the full UI, and improving the onboarding and login flow to better support simulation participation.
+                    </p>  
+              </div> 
+            </div>
+        </div>
+        <div class="full-span-image" style="margin-top: 40px; style="height: 650px">
+            <video width="100%" height="100%" preload="metadata" autoplay muted loop style="border-radius: 8px; display: block;">
+                <source src="./img/OO Video.mp4" type="video/mp4">
+                <img src="./img/OO-videocover.png" alt="Travel Health Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </video>
+        </div>
+    </section>
+
+     <!-- ===== SECTION 2: UX RESEARCH ===== -->
+    <section class="content-section container">
+     
+            <div class="grid-2-col">
+                <div class="col-right">
+                    <h3>UX Research</h3>
+                    <h2>A Behavioral Problem,</br> Not a Technical One</h2>
+                    <p>
+                        The first digital version provided basic functionality, but the user drop rate was very high (85.6%) and very quick after onboarding.
+                        To understand why engagement dropped so quickly, I conducted user research through surveys, workshops, and field observations. 
+                        These insights informed the redesign strategy and feature prioritization, and aligned direction and timeline.
+                     
+                    </p>
+                    <p>
+                        The original digital experience struggled with:
+                        <ul>
+                            <li>Low engagement and high drop off rate(85.6%)</li>
+                            <li>Confusing navigation and unclear goals</li>
+                            <li>Limited user understanding of how their actions affected outcomes</li>
+                            <li>Declining data quality over time</li>
+                        </ul>
+                        <p>For researchers, this meant: incomplete datasets, noisy or unreliable contact data, difficulty modeling real-world transmission patterns.</p>
+                    </p>
+                    
+                </div>
+            </div>
+              <!-- Hero Carousel -->
+              <div class="hero-carousel-wrapper">
+                <div class="carousel-container" id="hero-carousel">
+                    <button class="nav-arrow prev" onclick="moveCarousel('hero-carousel', -1)">&#10094;</button>
+                    <div class="carousel-slide active" style="background-image: url('./img/Mapping.png');"></div>
+                    <div class="carousel-slide" style="background-image: url('./img/Workshops.webp');"></div>
+                    <div class="carousel-slide" style="background-image: url('./img/sitevisting.png');"></div>
+                    <button class="nav-arrow next" onclick="moveCarousel('hero-carousel', 1)">&#10095;</button>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- ===== SECTION 3: DESIGN STRATEGY ===== -->
+    <section class="content-section container">
+        <div class="grid-2-col">
+
+           <div class="col-right">
+            <h3>Strategy I</h3>
+                <h2>Making Simulation Data </br> Understandable</h2>
+                <p class="section-subtitle">help users understand their role in the simulation and how their actions influence outcomes</p>
+
+                <p>
+                    <strong>Solutions</strong> </br> I redesigned the Statistics & Feedback system to make abstract epidemiological data understandable and actionable.
+                    <br/> Users could: view their contact history, understand risk exposure, track symptoms and behaviors, make informed decisions during the simulation.
+                    Also the app integrated epidemiology quizzes to reinforce learning and improve engagement.
+                </p>
+               
+          </div>
+          <div class="col-left" style="width: 500px;">
+            <p>
+                <strong style="color: rgb(240, 88, 0)">The problem</strong> </br>The original app had only 3 main screens and little explanatory content. Users couldn't understand why their actions mattered.
+            </p>
+            <div class="half-span-image" style="height: 200px;">
+                <div style="background-image: url('./img/OO-Previous2017.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+            </div>  
+         </div>
+        </div>
+        
+        <div class="full-span-image" style="height: 450px;">
+            <div style="background-image: url('./img/StatistcsFeedback.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="full-span-image" style="height: 650px;">
+            <div style="background-image: url('./img/ScanningItems.webp'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4: GAMIFICATION ===== -->
+    <section class="content-section container">
+        <div class="grid-2-col">
+            <div class="col-right"  style="width: 500px;">
+                <h3>Strategy II</h3>
+                <h2>Increasing Engagement </br> Through Gamification</h2>
+                <p class="section-subtitle">extend user engagement from short sessions to sustained participation across a 2 week simulation</p>
+                <p>
+                <strong>Key Mechanics:</strong> point system tied to behaviors, avatar health states, resource tradeoffs (PPE, quarantine, testing), daily decision loops, reward & consequence modeling. 
+                Rather than "playing a game," users experienced the real-world tradeoffs of public health decisions.
+               </p>
+            </div>
+            <div class="col-left" style="width: 550px;">
+                <p>
+                    <strong style="color: rgb(240, 88, 0)">The problem</strong> </br>User motivation dropped quickly, reducing participation and data reliability.
+                </br>I designed a gamification system aligned with research goals, informed by a collaborative workshop and pre-sim user testing.
+
+                </p>
+                <div class="half-span-image" style="height: 200px;">
+                    <div style="background-image: url('./img/UXResearch.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-span-image" style="background: #F0F4F8;">
+            <div style="background-image: url('./img/Avatar.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="full-span-image" style="background: #F0F4F8;">
+            <div style="background-image: url('./img/Homepage.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="full-span-image" style="background: #F0F4F8;">
+            <div style="background-image: url('./img/Shop.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="full-span-image" style="background: #F0F4F8;">
+            <div style="background-image: url('./img/Qurantine.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="full-span-image" style="margin-top: 40px; height: 650px">
+            <video width="100%" height="100%" preload="metadata" autoplay muted loop style="border-radius: 8px; display: block;">
+                <source src="./img/OO Video.mp4" type="video/mp4">
+                <img src="./img/OO-videocover.png" alt="Travel Health Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </video>
+        </div>
+    </section>
+
+     <!-- ===== SECTION 5: DESIGN STRATEGY ===== -->
+    <section class="content-section container">
+        <div class="grid-2-col">
+            <div class="col-left">
+                <h3>Strategy III</h3>
+                <h2>Solving Inefficient Navigation </br> and Poor Instruction</h2>
+                <p class="section-subtitle">streamline the OO digital experience by guiding users more clearly from instruction to execution</p>
+                <p> The original UI felt rigid, overly technical, and difficult to navigate.</p>
+                <div>
+                    <p>
+                        I redesigned the UI to reduce cognitive load, improve clarity, and create a more approachable and consistent experience across the system. 
+                        This included a refreshed visual identity, cleaner layouts, an improved color system, and reorganized navigation to make content easier to explore and understand.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-span-image" style="margin-top: 40px; height: 650px;">
+            <div style="background-image: url('./img/IA.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="full-span-image" style="margin-top: 40px; height: 650px;">
+            <div style="background-image: url('./img/Instruction.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="full-span-image" style="margin-top: 40px; height: 650px;">
+            <div style="background-image: url('./img/Onboarding.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6: Outcomes ===== -->
+    <section class="content-section container last-item">
+        <div class="grid-2-col">
+            <div class="col-left">
+                <h3>Results</h3>
+                <h2>Outcomes & Impact</h2>
+                <p>
+                    These redesign successfully supported the largest and longest Operation Outbreak simulation to date (11/2023), 
+                    achieved <strong>80% user satisfaction </strong> in post-study surveys, improved engagement and retention across the simulation period, from 45 mins to <strong>2 weeks</strong> long participation,
+                    improved <strong>data reliability by 62% </strong>, that support researchers in training the prediction model to closely mirror real outbreak patterns. 
+                </p>
+                <p>
+                    <strong>Additional contributions:</strong> 
+                    <ul>
+                        <li>Led recruitment efforts for 1,200+ participants</li>
+                        <li>Coordinated with researchers and educators during live deployment</li>
+                        <li>Designed communication materials and event assets</li>
+                       
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <div class="full-span-image" style="margin-top: 40px; height: 650px;">
+            <div style="background-image: url('./img/Outcomes.webp'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="grid-2-col"> 
+         <div class="col-right" style="margin-top: 40px; margin-bottom: 50px; width: 500px;">
+            <p style="font-size: 0.75rem; color: #565555;">Status Update: </br>
+                I also designed early prototypes for the OO admin dashboard used to set up and manage simulations.  
+                While ongoing development is now led by the Fathom design team, my original design content and userflows informed the current implementation.  
+                You can view my design version of <a href="https://yiviz.com/oo-admin-tool"> the OO dashboard </a> here. 
+            </p>
+            <div class="half-span-image" style="height: 250px;">
+                <div style="background-image: url('./img/OODashboardSmall.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+            </div>
+         </div> 
+       
+       </div>
+    </section>
+
+    <!-- ===== MORE STORIES SECTION ===== -->
+    <section class="stories-section">
+        <div class="container">
+            <h3>More Stories</h3>
+            
+            <div class="story-text-display">
+                <p id="story-desc" class="sans"> Here will show some group photos with different teams, and users playing the games. </p>
+            </div>
+
+            <div class="stories-stage" id="stories-stage">
+                <!-- Cards generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-note">
+        <div class="container">
+            <h2>Beyond the Case Study</h2>
+            <p>
+                This project gave me the opportunity to apply behavioral science principles to product design through gamification, emotional visual systems, and motivational feedback mechanisms.
+            </p>
+            <p>
+                It also allowed me to work closely with researchers, educators, and multiple design teams. Through this collaboration, I learned the importance of adaptability, open communication, and iteration when designing complex systems that serve both users and scientific goals.
+            </p>    
+            <a href="mailto:yi.designwork@gmail.com">Email Me</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="./projects/oo-admin-tool/index.html">Next Project</a>
+        </div>
+    </footer>
+
+    <!-- External Script -->
+    <script src="./js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Healthy | Editorial Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles-backup.css">
+</head>
+<body id="top">
+
+    <!-- PORTFOLIO NAVIGATION BAR -->
+    <nav id="main-nav">
+        <a href="../../index.html" class="nav-logo">Yinan Dong</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="../../index.html#digital-product">Digital Product</a>
+            <a href="../../index.html#web">Web</a>
+            <a href="../../index.html#exhibition">Exhibition</a>
+        </div>
+    </nav>
+
+    <!-- FLOATING NAVIGATION BUTTONS -->
+    <a href="../../index.html" class="float-btn float-home" title="Home">
+        <img src="./img/yinan-logo.png" alt="Home" class="float-btn-icon">
+    </a>
+    <a href="#top" class="float-btn float-top" title="Back to Top">↑</a>
+
+    <!-- ===== HERO SECTION ===== -->
+    <header class="container">
+        <span class="hero-label">Case Study • 2022 Nov- 2024 May</span>
+        
+        <h1>Bridging the Gap </br>in Global Health Data</h1>
+        <p class="hero-sub">
+            A scalable B2B2C platform addressing clinical data fragmentation for the CDC's <a href="https://gten.massgeneral.org/" class="hero-link"> Global Travel EPiNet (GTEN)</a> program
+        </p>
+        
+        <!-- Meta Grid: Role, Team, Awards -->
+        <div class="meta-grid">
+            <div class="meta-column">
+                <h4>ROLE</h4>
+                <ul>
+                    <li>UX/UI Design Lead</li>
+                    <li>UX Research & Testing</li>
+                    <li>Content Design & Prototyping</li>
+                    <li>Branding, Animation, Illustration</li>
+                </ul>
+            </div>
+            <div class="meta-column">
+                <h4>Team & Partners</h4>
+                <ul>
+                    <li>Lab PIs (Product Managers)</li>
+                    <li>3 Engineers & 2 Designers</li>
+                    <li>Medical Doctors & Researchers</li>
+                    <li>MGH & Umass Chan & CDC</li>
+                </ul>
+            </div>
+            <div class="meta-column">
+                <h4>RECOGNITION</h4>
+                <ul>
+                    <li><a href="https://ux-design-awards.com/winners/2024-2-travel-healthy" target="_blank" class="re-link">2024 UX Design Award Nomination</a></li>
+                    <li><a href="https://academic.oup.com/jtm/article/31/1/taad089/7220498?login=false" target="_blank" class="re-link">2024 Journal Article of Travel Medicine</a></li>
+                    <li><a href="https://www.linkedin.com/pulse/future-travel-health-personalized-ai-driven-lets-build-andres-colubri-jatse/?trackingId=0X%2BZHOQGTVKIifghs6c1ig%3D%3D" target="_blank" class="re-link">2025 IMPACT Program</a></li>
+                    <li><a href="https://travelhealthdatacommons.org/" target="_blank" class="re-link">2026 Travel Health Data Commons</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Hero Carousel -->
+        <div class="hero-carousel-wrapper">
+            <div class="carousel-container" id="hero-carousel">
+                <button class="nav-arrow prev" onclick="moveCarousel('hero-carousel', -1)">&#10094;</button>
+                <div class="carousel-slide active" style="background-image: url('./img/hero-1-composite.webp');"></div>
+                <div class="carousel-slide" style="background-image: url('./img/hero-2-mgh.png');"></div>
+                <div class="carousel-slide" style="background-image: url('./img/hero-3.webp');"></div>
+                <button class="nav-arrow next" onclick="moveCarousel('hero-carousel', 1)">&#10095;</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== IMPACT SECTION ===== -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <strong>$1.5M</strong>
+                    <span>CDC Funding</span>
+                </div>
+                <div class="stat-item">
+                    <strong>72%</strong>
+                    <span>Data Collection Efficiency Gain</span>
+                </div>
+                <div class="stat-item">
+                    <strong>18</strong>
+                    <span>Clinical Sites Deploying</span>
+                </div>
+            </div>
+            
+            <div class="impact-overview">
+                <p>
+                    "I led the end-to-end design of this public health platform, transforming fragmented, manual workflows into a scalable digital system used across clinical sites nationwide.
+                     As the Founding Designer, 
+                     I owned product strategy and UX execution — from research and system design to high-fidelity prototyping — working closely with engineers, epidemiologists, and stakeholders while mentoring a junior designer."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 1: THE PROBLEM ===== -->
+    <section class="content-section container">
+        <div class="side-by-side-grid">
+            <div>
+                <h3>THE CHALLENGE</h3>
+                <h2>A Systemic Disconnect</h2>
+                <p>
+                    <strong>The Context:</strong> During the COVID-19 crisis, researchers and policymakers struggled to track disease spread across borders, 
+                    contributing to over $16 trillion in global economic losses. In response, the CDC funded this initiative to modernize travel health surveillance and shift from reactive response to proactive monitoring.
+                </p>
+                <p>
+                    <strong>The Core Problem:</strong> Patients, clinics, and researchers operated in disconnected silos, relying heavily on paper-based workflows and email or phone-based communication.
+                    This fragmentation led to high operational costs, inconsistent data, delayed reporting, and limited visibility into emerging health risks.
+                </p>
+            </div>
+            
+            <div class="side-image-container">
+                <div class="carousel-container" id="carousel-1">
+                    <button class="nav-arrow prev" onclick="moveCarousel('carousel-1', -1)">&#10094;</button>
+                    <div class="carousel-slide active" style="background-image: url('./img/problem-1-paper-forms.png');"></div>
+                    <div class="carousel-slide" style="background-image: url('./img/problem-2-siloed-teams.png');"></div>
+                    <div class="carousel-slide" style="background-image: url('./img/systemdiagram.png');"></div>
+                    <button class="nav-arrow next" onclick="moveCarousel('carousel-1', 1)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2: MINIMUM VIABLE DATA ===== -->
+    <section class="content-section container">
+        <div class="grid-2-col">
+            <div class="col-left">
+                <h3>Part 1: The Input Engine</h3>
+                <h2>Solving Friction with<br>"Minimum Viable Data"</h2>
+                <p class="section-subtitle">Designed the mobile app to remove barriers for patients.</p>
+                
+                <p>
+                    <strong>The Problem:</strong> Patients, clinics, and researchers operated in disconnected silos, relying heavily on paper-based workflows and email/phone call communications.
+                </p>
+                <p>
+                    <strong>The Pivot:</strong> I facilitated a cross-functional workshop to define a "Minimum Viable Data" strategy. We reduced required fields by 30% and deferred non-critical information to later stages of the travel journey, significantly improving completion rates while preserving data quality.
+
+                </p>
+            </div>
+        </div>
+
+        <div class="full-span-image" style="background: #F0F4F8;">
+            <div style="background-image: url('./img/Onboarding-2.webp'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="full-span-image" style="margin-top: 40px; height: 650px">
+            <video width="100%" height="100%" preload="metadata" autoplay muted loop style="border-radius: 8px; display: block;">
+                <source src="./img/Onboarding2smaller.mp4" type="video/mp4">
+                <img src="./img/OnboardingCover.webp" alt="Travel Health Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </video>
+        </div>  
+    </section>
+
+    <!-- ===== SECTION 3: DAILY SURVEY ===== -->
+    <section class="content-section container">
+        <div class="grid-2-col">
+            <div class="col-right">
+                <h2>The Core Loop:<br>The 60-Second Survey</h2>
+                <p>
+                    The Challenge: How do we collect reliable daily health data from travelers who may have limited time, poor connectivity, or low motivation?
+                </p>
+                <p>
+                    Dynamic Logic: The survey dynamically adapts based on user input. Healthy users complete it in under 15 seconds, while symptomatic users are guided through a slightly longer flow (around 60s).
+                </br>Offline Resilience: All data is stored locally and syncs automatically once connectivity is restored, ensuring zero data loss — even during flights or in low-connectivity regions.
+            </p>
+            </div>
+        </div>
+
+        <div class="full-span-image" style="background: #F0F4F8;">
+            <div style="background-image: url('./img/survey-1.jpg'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="full-span-image" style="margin-top: 40px; height: 650px">
+            <video width="100%" height="100%" preload="metadata" autoplay muted loop style="border-radius: 8px; display: block;">
+                <source src="./img/TH-Survey.mp4" type="video/mp4">
+                <img src="./img/survey-1.jpg" alt="Travel Health Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </video>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4: VALUE EXCHANGE ===== -->
+    <section class="content-section container">
+        <div class="grid-2-col">
+            <div class="col-left">
+                <h2>Solving Retention:<br>Value Exchange</h2>
+                <p>
+                    To combat survey fatigue, I reframed participation as a value exchange rather than data extraction.
+                </p>
+                
+                <div>
+                    <p><strong>Emotional Value:</strong> The "Digital Postcard" system turned daily check-ins into a lightweight, collectible experience.</p>
+                    <p><strong>Practical Value:</strong> 
+                        The Syptoms Calendar and Travel Wallet allowed users to track symptoms, share records with clinicians, and access trusted CDC guidance before, during and after travel
+                        — significantly improving retention and perceived usefulness.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-span-image" style="margin-top: 40px; height: 650px;">
+            <div style="background-image: url('./img/Rewards.png'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="full-span-image" style="margin-top: 40px; height: 650px;">
+            <video width="100%" height="100%" preload="metadata" autoplay muted loop style="border-radius: 8px; display: block;">
+                <source src="./img/Rewards2smaller.mp4" type="video/mp4">
+                <img src="./img/Rewards2Cover.png" alt="Travel Health Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </video>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5: AUTOMATING LOGIC ===== -->
+    <section class="content-section container">
+        <div class="grid-2-col">
+            <div class="col-right">
+                <h2>Solving Complexity for <br>Travel Medicine </h2>
+                <p>
+                    Malaria prevention involves multiple medications with complex schedules, making adherence difficult and error-prone.
+                </p>
+                <p>
+                    I worked with clinicians to model the decision logic and shift complexity from the user to the system. Users now select a medication once, and the app automatically generates the correct schedule.
+                </p>
+            </div>
+        </div>
+        
+        <div class="full-span-image" style="background: #E8F5E9;">
+            <div style="background-image: url('./img/Malaria.webp'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6: RISK VISUALIZATION ===== -->
+    <section class="content-section container last-item">
+        <div class="grid-2-col">
+            <div class="col-left">
+                <h3>Part 2: The Output Engine</h3>
+                <h2>Visualizing Risk for<br>Rapid Response</h2>
+                <p class="section-subtitle">For researchers, value meant insight, not just collection.</p>
+                <p>
+                    Policymakers needed high-level trends to guide decisions, while epidemiologists and clinicians required granular data for disease monitoring and data collection tracking.
+                </p>
+                <p>I designed a map-first dashboard that prioritizes situational awareness. Risk is visualized through a density-based model:</p>
+                <p>
+                   Bubble Size = Confidence , Color = Severity </br> 
+                   The KPI ribbon provides an instant read on overall data health, allowing analysts to identify emerging hotspots within seconds while still supporting deeper investigation when needed.
+                </p>
+            </div>
+        </div>
+        <div class="full-span-image" style="margin-top: 40px; height: 650px; background: #111;">
+            <video width="100%" height="100%" preload="metadata" autoplay muted loop style="border-radius: 8px; display: block;">
+                <source src="./img/TH-Dashboard smaller.mp4" type="video/mp4">
+                <img src="./img/DashboardCover.webp" alt="Travel Health Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </video>
+        </div>
+        <div class="status-update" style="margin-top: 40px; margin-bottom: 80px; width: 500px;">
+        <p style="font-size: 0.75rem; color: #565555;">Status Update: </br>
+            The mobile app is live and actively used across 18 travel clinics. The dashboard is currently in development, with early validation complete and performance metrics being collected as part of the next implementation phase.
+        </p>
+       </div> 
+    </section>
+
+    <!-- ===== MORE STORIES SECTION ===== -->
+    <section class="stories-section">
+        <div class="container">
+            <h3>More Stories</h3>
+            
+            <div class="story-text-display">
+                <p id="story-desc" class="sans">To meet strict MGH privacy requirements and support travelers with limited connectivity, I worked closely with engineers to define and design a Local-First architecture.</p>
+            </div>
+
+            <div class="stories-stage" id="stories-stage">
+                <!-- Cards generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-note">
+        <div class="container">
+            <h2>Beyond the Case Study</h2>
+            <p>
+                This project represents a deeply meaningful design experience for me — spanning everything from a B2B data collection tool 
+                to a B2C public health dashboard, with real-world impact on how health data is gathered and used.
+            </p>
+            <p>
+                Working on Travel Healthy taught me how design decisions shape not just interfaces, 
+                but entire systems that support clinical and medical research. I was involved in every stage of the process — from defining the problem and aligning stakeholders, to designing workflows that balanced clinical rigor with human usability.
+            </p>    
+            <p>
+                The solutions we built were shaped by real-world constraints at the time (2022-2023) — limited resources, evolving digital health standards, 
+                and the urgency of public health needs. While newer technologies like AI are rapidly changing the landscape, this project reinforced what continues to drive my work: using design to improve how data supports drug discovery, 
+                patient care and management, and more efficient, informed treatment decisions — ultimately helping people better understand and manage their health.
+            </p>
+            <a href="mailto:yi.designwork@gmail.com">Email Me</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="./projects/operation-outbreak/index.html">Next Project</a>
+        </div>
+    </footer>
+
+    <!-- External Script -->
+    <script src="./js/script.js"></script>
+
+</body>
+</html>

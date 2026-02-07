@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OO Admin Tool | Enterprise Dashboard Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+    <nav id="main-nav">
+        <a href="../../index.html" class="nav-logo">Yinan Dong</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="../../index.html#digital-product">Digital Product</a>
+            <a href="../../index.html#web">Web</a>
+            <a href="../../index.html#exhibition">Exhibition</a>
+        </div>
+    </nav>
+
+    <!-- FLOATING NAVIGATION BUTTONS -->
+    <a href="../../index.html" class="float-btn float-home" title="Home">
+        <img src="./img/yinan-logo.png" alt="Home" class="float-btn-icon">
+    </a>
+    <a href="#top" class="float-btn float-top" title="Back to Top">↑</a>
+
+    <header class="project-hero">
+        <div class="mist-container">
+            <div class="mist-blob blob-1"></div>
+            <div class="mist-blob blob-2"></div>
+        </div>
+        <div class="container">
+            <span class="hero-label">Early Prototype • May 2022 - Dec 2022</span>
+            <h1>OO Admin Tool</h1>
+            <p class="hero-sub">
+                I designed an admin "Mission Control" tool that transforms complex epidemiological parameters into a guided configuration workflow and provides real-time visibility into system health during live simulations.
+            </p>
+            
+            <div class="meta-grid">
+                <div class="meta-column">
+                    <h4>Role</h4>
+                    <ul>
+                        <li>UX/UI Design Lead</li>
+                        <li>Information Architecture</li>
+                        <li>System Design</li>
+                        <li>User Testing</li>
+                    </ul>
+                </div>
+                <div class="meta-column">
+                    <h4>Team</h4>
+                    <ul>
+                        <li>Lab PIs (Product Managers)</li>
+                        <li>3 Engineers & 2 Designers</li>
+                        <li>5 Bioinformatic Researchers</li>
+                    </ul>
+                </div>
+                <div class="meta-column">
+                    <h4>Partners</h4>
+                    <ul>
+                        <li>Broad Institute</li>
+                        <li>UMass Chan</li>
+                        <li>Teachers & Coordinators</li>
+                    </ul>
+                </div>
+                <div class="meta-column">
+                    <h4>Keywords</h4>
+                    <ul>
+                        <li>Real-Time Simulation</li>
+                        <li>Enterprise Dashboard</li>
+                        <li>Crisis Management</li>
+                        <li>Workflow Automation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <span class="section-label">01 / Overview & Goal</span>
+            <div class="side-by-side-grid">
+                <div>
+                    <h2>Managing Complexity</h2>
+                    <p>Running a live epidemiology simulation is operationally complex: facilitators must configure scientifically valid scenarios, monitor fast-changing system behavior, and intervene at the right moment.</p>
+                </div>
+                <div>
+                    <p>The goal was to design a centralized "Mission Control" that makes complex epidemiological modeling accessible to non-technical educators. This early design phase focused on establishing a scalable architectural foundation for the simulation ecosystem.</p>
+                </div>
+            </div>
+            <div class="video-placeholder">
+                <video autoplay muted loop playsinline>
+                    <source src="./img/Admin_Version1_Smaller.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background: #fcfcfc;">
+        <div class="container">
+            <span class="section-label">02 / Challenge</span>
+            <div class="side-by-side-grid">
+                <div>
+                    <h3>Configuration Paralysis</h3>
+                    <p>Setting up a valid simulation required adjusting many interdependent variables—such as transmission rate and population density—leading to high cognitive load and a risk of setup error.</p>
+                </div>
+                <div>
+                    <h3>Monitoring Blind Spots</h3>
+                    <p>During live runs, facilitators lacked a clear way to understand system health or participant behavior in real-time, making it difficult to know when to intervene.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact-section">
+        <div class="container">
+            <span class="section-label">03 / Impact & Design Foundation</span>
+            <div class="side-by-side-grid">
+                <div>
+                    <h2>Foundational Logic</h2>
+                    <p>These early prototypes established the user flows and information architecture that informed the tool's current implementation by the Fathom design team. By mapping out complex epidemiological logic into a human-readable interface, we moved the project from abstract research into a viable product roadmap.</p>
+                </div>
+                <div>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <strong>~80%</strong>
+                            <span>Reduction in pre-communication overhead for configuration settings.</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>Validated</strong>
+                            <span>Core architectural handoff for the current development team.</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>0 to 1</strong>
+                            <span>Transformation of bio-data into actionable admin workflows.</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>Scalable</strong>
+                            <span>Flexible framework supporting both expert and novice user tiers.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <span class="section-label">04 / Design Strategy & Solutions</span>
+
+            <!-- Strategy 1 -->
+            <div class="full-row-block">
+                <div class="text-content">
+                    <h3>Central Command Center</h3>
+                    <p>A unified, glanceable interface that aggregates system health, participant activity, and key metrics. This reduces noise and allows facilitators to quickly assess stability and prioritize action.</p>
+                    <p><strong>Result:</strong> Improved situational awareness and faster decision-making during live simulations.</p>
+                </div>
+                <div class="video-placeholder">
+                    <img src="./img/DashboardOverview.png" alt="Policy Efficacy Monitor Prototype" class="image-asset" style="width: 82%;">
+                </div>
+            </div>
+
+            <!-- Strategy 2 -->
+            <div class="full-row-block">
+                <div class="text-content">
+                    <h3>Structured Configuration Wizard</h3>
+                    <p>A step-by-step setup flow that converts complex epidemiological parameters into a guided process with built-in validation.</p>
+                    <p><strong>Result:</strong> Prevented invalid configurations and significantly reduced setup errors and cognitive load.</p>
+                </div>
+                <div class="video-placeholder">
+                    <video autoplay muted loop playsinline>
+                        <source src="./img/createsim.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Strategy 3 -->
+            <div class="full-row-block">
+                <div class="text-content">
+                    <h3>Real-Time Intervention Deck</h3>
+                    <p>A control layer that provides immediate access to high-impact actions such as pausing simulations or issuing alerts.</p>
+                    <p><strong>Result:</strong> Reduced response time during critical moments and enabled facilitators to stabilize simulations before failure states occurred.</p>
+                </div>
+                <div class="video-placeholder">
+                    <video autoplay muted loop playsinline>
+                        <source src="./img/ActiveControl.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Strategy 4 -->
+            <div class="full-row-block">
+                <div class="text-content">
+                    <h3>Simulation Diagnostic Tool</h3>
+                    <p>A visualization layer that compares predicted epidemiological curves with real-time outcomes.</p>
+                    <p><strong>Result:</strong> Enabled researchers to validate model behavior and adjust parameters when simulations deviated from expected patterns.</p>
+                </div>
+                <div class="video-placeholder">
+                    <video autoplay muted loop playsinline>
+                        <source src="./img/ActiveControl.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Strategy 5 -->
+            <div class="full-row-block">
+                <div class="text-content">
+                    <h3>Advanced Configuration Management</h3>
+                    <p>A tiered system for expert users that supports deeper experimentation and "what-if" scenario testing without overwhelming standard workflows.</p>
+                    <p><strong>Result:</strong> Balanced usability for educators with flexibility for researchers.</p>
+                </div>
+                <div class="video-placeholder">
+                    <video autoplay muted loop playsinline>
+                        <source src="./img/modeling.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Strategy 6 -->
+            <div class="full-row-block">
+                <div class="text-content">
+                    <h3>Policy Efficacy Monitor</h3>
+                    <p>Visualizes how participant decisions—such as lockdowns or resource allocation—affect infection spread and system stability.</p>
+                    <p><strong>Result:</strong> Made abstract policy effects visible and strengthened learning outcomes during simulation debriefs.</p>
+                </div>
+                <div class="video-placeholder">
+                    <img src="./img/Lookout Government.png" alt="Policy Efficacy Monitor Prototype" class="image-asset">
+                </div>
+            </div>
+
+            <!-- Strategy 7 -->
+            <div class="full-row-block">
+                <div class="text-content">
+                    <h3>Containment Strategy Tracker</h3>
+                    <p>Tracks biological and operational indicators such as infection rates, testing coverage, and contact tracing performance.</p>
+                    <p><strong>Result:</strong> Helped facilitators identify weaknesses in containment strategy and guide intervention timing.</p>
+                </div>
+                <div class="video-placeholder">
+                    <img src="./img/Lookout Public Health.png" alt="Capacity Monitoring & Warning System Prototype" class="image-asset">
+                </div>
+            </div>
+
+            <!-- Strategy 8 -->
+            <div class="full-row-block">
+                <div class="text-content">
+                    <h3>Capacity Monitoring & Warning System</h3>
+                    <p>Monitors critical thresholds (e.g., hospital capacity) and surfaces early warning signals of system collapse.</p>
+                    <p><strong>Result:</strong> Enabled proactive intervention and prevented simulation failure.</p>
+                </div>
+                <div class="video-placeholder">
+                    <div class="video-placeholder">
+                        <video autoplay muted loop playsinline>
+                            <source src="./img/healthcare.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy 9 -->
+            <div class="full-row-block">
+                <div class="text-content">
+                    <h3>Threat Management Center</h3>
+                    <p>Centralizes critical alerts and maintains a full audit trail of interventions for post-simulation analysis.</p>
+                    <p><strong>Result:</strong> Improved operational control and supported structured evaluation after each run.</p>
+                </div>
+                <div class="video-placeholder">
+                    <video autoplay muted loop playsinline>
+                        <source src="./img/alert.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="image-grid" style="width:55%;">
+                <h3>Styling Guide</h3>
+                    <img src="./img/DesignSystem.png" alt="design system" class="image-asset">
+         
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <h2>Vision to Implementation</h2>
+            <p>This early design phase was critical in defining the UX strategy for the OO Admin ecosystem. By translating complex scientific variables into intuitive visual controls, we provided the blueprint that continues to guide the platform's evolution today.</p>
+            <div class="footer-cta">
+                <a href="/cdn-cgi/l/email-protection#2a5343044e4f59434d445d4558416a4d474b434604494547">Email Me</a>
+                <a href="./projects/travel-healthy/index.html">Next Project</a>
+            </div>
+        </div>
+    </footer>
+
+    <sc

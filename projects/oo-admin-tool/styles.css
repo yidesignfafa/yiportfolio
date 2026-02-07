@@ -1,0 +1,645 @@
+/* --- 1. DESIGN TOKENS --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
+}
+
+:root {
+    --gutter: 60px;
+    --header-height: 80px;
+    --max-content-width: 1400px;
+    --text-main: #111;
+    --text-muted: #555;
+    --accent: #0697c4;
+    --bg-color: #ffffff;
+    --mist-color-1: rgba(230, 240, 255, 0.6);
+    --mist-color-2: rgba(240, 240, 240, 0.5);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- 2. GLASS NAVIGATION --- */
+nav {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: var(--header-height);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 var(--gutter);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1000; 
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.nav-logo { 
+    font-weight: 700; 
+    font-size: 14px; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 30px; 
+}
+
+.nav-links a { 
+    font-size: 11px; 
+    font-weight: 500; 
+    letter-spacing: 0.5px; 
+    text-transform: uppercase; 
+    text-decoration: none; 
+    color: inherit; 
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* --- 3. HERO & MIST --- */
+header.project-hero { 
+    position: relative; 
+    padding-top: 180px; 
+    padding-bottom: 100px; 
+    overflow: hidden; 
+}
+
+.mist-container { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 1; 
+    filter: blur(80px); 
+    opacity: 0.6; 
+    pointer-events: none; 
+}
+
+.mist-blob { 
+    position: absolute; 
+    border-radius: 50%; 
+    mix-blend-mode: multiply; 
+    animation: float 20s infinite alternate ease-in-out; 
+}
+
+.blob-1 { 
+    width: 500px; 
+    height: 500px; 
+    background: var(--mist-color-1); 
+    top: -10%; 
+    left: -5%; 
+}
+
+.blob-2 { 
+    width: 400px; 
+    height: 400px; 
+    background: var(--mist-color-2); 
+    bottom: 10%; 
+    right: -5%; 
+    animation-duration: 25s; 
+}
+
+@keyframes float { 
+    0% { transform: translate(0, 0) scale(1); } 
+    100% { transform: translate(50px, 50px) scale(1.1); } 
+}
+
+.hero-label { 
+    font-size: 11px; 
+    font-weight: 700; 
+    letter-spacing: 1.5px; 
+    text-transform: uppercase; 
+    color: #aaa; 
+    margin-bottom: 30px; 
+    display: block; 
+}
+
+h1 { 
+    font-size: clamp(40px, 6vw, 84px); 
+    line-height: 1.05; 
+    font-weight: 600; 
+    letter-spacing: -0.04em; 
+    margin-bottom: 40px; 
+    max-width: 1000px; 
+}
+
+.hero-sub { 
+    font-size: clamp(18px, 2vw, 24px); 
+    line-height: 1.4; 
+    color: var(--text-muted); 
+    max-width: 850px; 
+    margin-bottom: 80px; 
+}
+
+/* --- 4. META GRID --- */
+.meta-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 40px; 
+    border-top: 1px solid #eee; 
+    padding-top: 60px; 
+}
+
+.meta-column h4 { 
+    font-size: 11px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: #aaa; 
+    margin-bottom: 20px; 
+}
+
+.meta-column ul { 
+    list-style: none; 
+}
+
+.meta-column li {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 4px;
+    color: var(--text-muted);
+}
+
+.meta-column a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.meta-column a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* --- 5. CONTENT SECTIONS --- */
+.content-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section-label { 
+    font-size: 11px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: #aaa; 
+    margin-bottom: 40px; 
+    display: block; 
+}
+
+h2 { 
+    font-size: clamp(32px, 4vw, 48px); 
+    font-weight: 600; 
+    letter-spacing: -0.03em; 
+    margin-bottom: 30px; 
+}
+
+h3 { 
+    font-size: 24px; 
+    font-weight: 600; 
+    margin-bottom: 12px; 
+    margin-top: 40px; 
+}
+
+p { 
+    font-size: 17px; 
+    line-height: 1.7; 
+    color: var(--text-muted); 
+    margin-bottom: 25px; 
+}
+
+/* --- Layout: Full Row Content --- */
+.full-row-block { 
+    margin-bottom: 120px; 
+}
+
+.full-row-block .text-content { 
+    max-width: 800px; 
+    margin-bottom: 40px; 
+}
+
+.side-by-side-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 100px; 
+    align-items: start; 
+    margin-bottom: 60px; 
+}
+
+/* --- 6. IMPACT SECTION (DARK) --- */
+.impact-section {
+    background: #0c0c0c;
+    color: #fff;
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.impact-section h2 { 
+    color: #fff; 
+}
+
+.impact-section p { 
+    color: #999; 
+}
+
+.stat-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px; 
+    margin-top: 60px; 
+}
+
+.stat-item strong { 
+    font-size: 48px; 
+    font-weight: 700; 
+    display: block; 
+    color: var(--accent); 
+    margin-bottom: 10px; 
+}
+
+.stat-item span { 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: #666; 
+    line-height: 1.4; 
+    display: block;
+}
+
+/* --- 7. MEDIA ASSETS --- */
+.video-placeholder { 
+    width: 100%; 
+    aspect-ratio: 16 / 9; 
+    background: #f7f7f7; 
+    border-radius: 12px; 
+    margin-top: 20px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 14px; 
+    color: #bbb;
+    border: 1px solid #eee; 
+    overflow: hidden;
+}
+
+.video-placeholder video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.image-asset { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 12px; 
+    margin: 40px 0; 
+    border: 1px solid #eee; 
+}
+
+/* --- 8. FOOTER --- */
+footer { 
+    padding: 140px 0 100px; 
+    border-top: 1px solid #eee; 
+}
+
+.footer-cta { 
+    display: flex; 
+    gap: 40px; 
+    margin-top: 60px; 
+}
+
+.footer-cta a { 
+    font-size: 18px; 
+    text-decoration: none; 
+    color: var(--text-main); 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+    padding-bottom: 4px; 
+    transition: border 0.3s; 
+}
+
+.footer-cta a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* --- 9. FLOATING NAVIGATION BUTTONS --- */
+.float-btn {
+    position: fixed;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.float-home { 
+    left: 40px; 
+}
+
+.float-btn-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.float-top {
+    right: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.float-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* --- 10. MOBILE NAVIGATION (HAMBURGER) --- */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-line {
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: var(--text-main);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.active .hamburger-line:first-child {
+    transform: translateY(3.75px) rotate(45deg);
+}
+
+.nav-toggle.active .hamburger-line:last-child {
+    transform: translateY(-3.75px) rotate(-45deg);
+}
+
+/* --- 11. RESPONSIVE --- */
+@media (max-width: 1024px) {
+    :root {
+        --gutter: 40px;
+    }
+
+    .side-by-side-grid,
+    .meta-grid,
+    .stat-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .full-row-block {
+        margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --gutter: 24px;
+    }
+
+    /* Show hamburger, collapse nav links */
+    .nav-toggle {
+        display: flex;
+    }
+
+    nav {
+        height: 60px;
+        padding: 0 var(--gutter);
+    }
+
+    .nav-logo { font-size: 12px; }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        flex-direction: column;
+        padding: 24px var(--gutter);
+        gap: 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    /* Hero */
+    header.project-hero {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    h1 {
+        font-size: clamp(28px, 6vw, 48px);
+    }
+
+    h2 {
+        font-size: clamp(24px, 4vw, 36px);
+    }
+
+    .hero-sub {
+        font-size: clamp(16px, 2vw, 20px);
+        margin-bottom: 40px;
+    }
+
+    /* Meta grid */
+    .meta-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding-top: 40px;
+    }
+
+    /* Content sections */
+    .content-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .full-row-block {
+        margin-bottom: 60px;
+    }
+
+    /* Impact section */
+    .impact-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .stat-item strong {
+        font-size: 36px;
+    }
+
+    /* FIX: Image grid — override inline width */
+    .image-grid,
+    .image-grid[style*="width"] {
+        width: 100% !important;
+    }
+
+    /* FIX: Videos — constrain to container */
+    .video-placeholder {
+        margin-top: 16px;
+    }
+
+    .video-placeholder video,
+    .image-asset {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    /* FIX: Inline-styled image widths */
+    .image-asset[style*="width"] {
+        width: 100% !important;
+    }
+
+    /* Footer */
+    footer {
+        padding: 80px 0 60px;
+    }
+
+    .footer-cta {
+        gap: 24px;
+        margin-top: 40px;
+    }
+
+    .footer-cta a {
+        font-size: 16px;
+    }
+
+    /* Floating buttons */
+    .float-btn {
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    .float-home { left: 20px; }
+    .float-top { right: 20px; }
+
+    .float-btn-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --gutter: 16px;
+    }
+
+    header.project-hero {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    .meta-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .content-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .full-row-block {
+        margin-bottom: 40px;
+    }
+
+    .impact-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .stat-grid {
+        gap: 24px;
+    }
+
+    .stat-item strong {
+        font-size: 28px;
+    }
+
+    footer {
+        padding: 60px 0 40px;
+    }
+
+    .footer-cta {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .float-btn {
+        width: 40px;
+        height: 40px;
+        bottom: 16px;
+    }
+    .float-home { left: 16px; }
+    .float-top { right: 16px; }
+    .float-btn-icon { width: 26px; height: 26px; }
+}

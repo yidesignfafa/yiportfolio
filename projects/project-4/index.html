@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura App | Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        /* Navigation bar styles */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+        }
+        .nav-logo { 
+            font-weight: 700; 
+            font-size: 14px; 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+            color: #111;
+            text-decoration: none;
+        }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { 
+            font-size: 11px; 
+            font-weight: 500; 
+            letter-spacing: 0.5px; 
+            text-transform: uppercase; 
+            text-decoration: none; 
+            color: #111;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover { color: #0697c4; }
+        .placeholder {
+            max-width: 800px;
+            text-align: center;
+            background: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        a.back-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #0697c4;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        a.back-link:hover {
+            background: #0577a4;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Portfolio Navigation Bar -->
+    <nav>
+        <a href="../../index.html" class="nav-logo">Yinan Fish</a>
+        <div class="nav-links">
+            <a href="../../index.html#digital-product">Digital Product</a>
+            <a href="../../index.html#web">Web</a>
+            <a href="../../index.html#exhibition">Exhibition</a>
+        </div>
+    </nav>
+
+    <div class="placeholder">
+        <h1>Aura App</h1>
+        <p>
+            This project page is coming soon. Replace this placeholder with your actual case study content, images, and media files.
+        </p>
+        <p>
+            Add your content in: <code>/projects/project-4/index.html</code>
+        </p>
+        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+    </div>
+
+</body>
+</html>
