@@ -294,19 +294,28 @@ p {
 }
 
 /* --- 7. MEDIA ASSETS --- */
-.video-placeholder { 
-    width: 100%; 
-    aspect-ratio: 16 / 9; 
-    background: #f7f7f7; 
-    border-radius: 12px; 
-    margin-top: 20px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    font-size: 14px; 
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #f7f7f7;
+    border-radius: 12px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
     color: #bbb;
-    border: 1px solid #eee; 
+    border: 1px solid #eee;
     overflow: hidden;
+    /* Scroll animation (desktop only) */
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.video-placeholder.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .video-placeholder video { 
@@ -315,12 +324,45 @@ p {
     object-fit: cover; 
 }
 
-.image-asset { 
-    width: 100%; 
-    height: auto; 
-    border-radius: 12px; 
-    margin: 40px 0; 
-    border: 1px solid #eee; 
+.image-asset {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 40px 0;
+    border: 1px solid #eee;
+}
+
+/* Scroll animation only on standalone .image-asset (not inside .video-placeholder) */
+.full-row-block > .text-content ~ .image-asset,
+.image-grid .image-asset {
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.image-asset.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* .image-asset inside .video-placeholder: no own animation, parent controls visibility */
+.video-placeholder .image-asset {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* On mobile: show everything immediately, no animation */
+@media (max-width: 768px) {
+    .video-placeholder,
+    .image-asset {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 /* --- 8. FOOTER --- */

@@ -919,6 +919,13 @@ header.container {
         font-size: 0.8rem;
     }
 
+    /* Mobile: show images immediately, no animation */
+    .full-span-image {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
     /* ---- FIX: Override ALL inline heights & widths ---- */
     .full-span-image,
     .full-span-image[style*="height"] {

@@ -10,7 +10,7 @@
 
    /* --- PASSWORD PROTECTION --- */
    (function initPasswordGate() {
-       const PASSWORD = 'designyd26';
+       const PASSWORD = 'dyfafa26';
        const SESSION_KEY = 'portfolio_auth';
 
        // Check if already authenticated this session
@@ -55,8 +55,11 @@
        if (btn) btn.addEventListener('click', attemptLogin);
        if (input) {
            input.addEventListener('keydown', (e) => {
-               if (e.key === 'Enter') attemptLogin();
-               // Clear error on typing
+               if (e.key === 'Enter') {
+                   attemptLogin();
+                   return;
+               }
+               // Clear error on typing (but not on Enter)
                if (error) error.textContent = '';
            });
            // Auto-focus
@@ -162,22 +165,31 @@
        }
    }
    
+   let skyAnimationRunning = false;
+
    function initSky() {
        // Skip canvas on mobile for performance
        if (window.innerWidth <= 768) return;
-       
+
        canvas = document.getElementById('hero-canvas');
        if (!canvas) return;
        ctx = canvas.getContext('2d');
        resizeCanvas();
        for (let i = 0; i < 18; i++) particles.push(new SkyParticle());
-       (function animate() {
-           // Stop animation if resized to mobile
-           if (window.innerWidth <= 768) return;
-           ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-           particles.forEach(p => { p.update(); p.draw(); });
-           requestAnimationFrame(animate);
-       })();
+       skyAnimationRunning = true;
+       requestAnimationFrame(animateSky);
+   }
+
+   function animateSky() {
+       if (!skyAnimationRunning) return;
+       // Pause (don't kill) animation on mobile
+       if (window.innerWidth <= 768) {
+           requestAnimationFrame(animateSky);
+           return;
+       }
+       ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+       particles.forEach(p => { p.update(); p.draw(); });
+       requestAnimationFrame(animateSky);
    }
    
    function resizeCanvas() {
@@ -347,10 +359,10 @@
    
    
    // Disable right-click
-   /*document.addEventListener('contextmenu', function(e) {
+   document.addEventListener('contextmenu', function(e) {
        e.preventDefault();
        return false;
-   });*/
+   });
    
    // Disable key shortcuts
    document.addEventListener('keydown', function(e) {

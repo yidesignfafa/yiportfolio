@@ -219,28 +219,30 @@ document.addEventListener("DOMContentLoaded", function() {
     /* =====================================================
        A. SCROLL-TRIGGERED IMAGE ANIMATIONS
        Uses Intersection Observer for performance.
-       When 10% of image is visible, add 'visible' class.
+       Disabled on mobile (<=768px).
     ===================================================== */
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+    if (window.innerWidth > 768) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const animatedImages = document.querySelectorAll('.full-span-image');
+        animatedImages.forEach(img => {
+            observer.observe(img);
         });
-    }, observerOptions);
-
-    const animatedImages = document.querySelectorAll('.full-span-image');
-    animatedImages.forEach(img => {
-        observer.observe(img);
-    });
+    }
 
     /* =====================================================
        B. SCROLL-TO-TOP BUTTON VISIBILITY
@@ -256,4 +258,26 @@ document.addEventListener("DOMContentLoaded", function() {
             floatTopBtn.classList.remove('visible');
         }
     }, { passive: true });
+
+    /* =====================================================
+       C. CONTENT PROTECTION
+       Disable right-click, key shortcuts, drag
+    ===================================================== */
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.keyCode === 123) { e.preventDefault(); return false; }
+        if ((e.ctrlKey || e.metaKey) && e.keyCode === 83) { e.preventDefault(); return false; }
+        if ((e.ctrlKey || e.metaKey) && e.keyCode === 85) { e.preventDefault(); return false; }
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.keyCode === 73) { e.preventDefault(); return false; }
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.keyCode === 67) { e.preventDefault(); return false; }
+    });
+
+    document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+    });
 });
