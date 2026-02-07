@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Yinan Dong - Full-stack product designer specializing in digital products and data visualization">
+    <title>Yinan Fish — Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css?v=2">
+</head>
+<body>
+
+    <!-- PASSWORD PROTECTION OVERLAY -->
+    <div id="password-overlay">
+        <canvas id="pw-canvas"></canvas>
+        <div class="pw-content">
+            <div class="pw-logo">Yinan Dong</div>
+            <p class="pw-subtitle">Portfolio 2026</p>
+            <div class="pw-form">
+                <input type="password" id="pw-input" placeholder="Enter password" autocomplete="off" spellcheck="false">
+                <button id="pw-submit" type="button">→</button>
+            </div>
+            <p id="pw-error" class="pw-error"></p>
+        </div>
+    </div>
+
+    <nav id="main-nav">
+        <div class="nav-logo">Yinan Dong</div>
+        <div class="nav-links">
+            <a href="#digital-product">Digital Product</a>
+            <a href="#web">Web</a>
+            <a href="#exhibition">Exhibition</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="container hero">
+        <div class="hero-bg-container">
+            <canvas id="hero-canvas"></canvas>
+        </div>
+        <h1>
+            A full-stack product designer specializing in Digital Product and data visualization. Transforming complex data into accessible digital experiences.
+        </h1>
+        <div class="hero-menu">
+            <a href="#digital-product">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M12 2C10 2 10 4 10 5C10 4 8 2 6 4C4 6 6 8 7 8C6 8 4 8 4 10C4 12 6 12 7 12C6 12 4 14 6 16C8 18 10 16 10 15C10 16 10 18 12 18C14 18 14 16 14 15C14 16 16 18 18 16C20 14 18 12 17 12C18 12 20 12 20 10C20 8 18 8 17 8C18 8 20 6 18 4C16 2 14 4 14 5C14 4 14 2 12 2Z" stroke="currentColor" fill="none"/>
+                    <circle cx="12" cy="10" r="2" fill="currentColor"/>
+                </svg>
+                <span>6+ years Digital Product & UX/UI Design ↓</span>
+            </a>
+            <a href="#web">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 3L14.5 9H21L16 13L18 20L12 16L6 20L8 13L3 9H9.5L12 3Z" stroke="currentColor"/></svg>
+                <span>3+ years Data Viz & Creative Coding ↓</span>
+            </a>
+            <a href="#exhibition">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M12 3C8 3 5 8 5 13C5 16 7 19 10 20.5C11 21 12 21 12 21C12 21 13 21 14 20.5C17 19 19 16 19 13C19 8 16 3 12 3Z" stroke="currentColor" fill="none"/>
+                    <path d="M12 3C12 3 12 8 12 21" stroke="currentColor"/>
+                </svg>
+                <span>2+ years Exhibition & Public Engagement ↓</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 1. DIGITAL PRODUCT SECTION (3 Projects) -->
+    <section id="digital-product" class="project-category">
+        <div class="container">
+            <article class="project-item">
+                <div class="divider-line"></div>
+                <div class="project-text-grid">
+                    <div class="text-col-main">
+                        <h2>Travel Healthy</h2>
+                        <p>A scalable digital health platform supporting clinical and public health research by streamlining data collection and empowering travelers with real-time health tools</p>
+                    </div>
+                    <div class="text-col-meta"><span class="label">Role</span><ul class="meta-list"><li>Design from 0 to 1</li><li>Product Strategy</li><li>UI/UX Design</li></ul></div>
+                    <div class="text-col-meta"><span class="label">Link</span><ul class="meta-list"><li><a href="./projects/travel-healthy/index.html">Case Study ↗</a></li></ul></div>
+                </div>
+                <div class="scroll-image-container js-anim-target">
+                    <img src="./img/Travel Healthy.webp" alt="Travel Healthy digital health platform interface showing data collection dashboard" loading="lazy">
+                </div>
+            </article>
+
+            <article class="project-item">
+                <div class="divider-line"></div>
+                <div class="project-text-grid">
+                    <div class="text-col-main">
+                        <h2>Simulation Game</h2>
+                        <p>Operation Outbreak (OO) app simulates the spread of a virtual pathogen using Bluetooth, letting participants experience how diseases transmit through real-life social interactions while collecting data for learning and research</p>
+                    </div>
+                    <div class="text-col-meta"><span class="label">Role</span><ul class="meta-list"><li>Redesign</li><li>Gamification Design</li></ul></div>
+                    <div class="text-col-meta"><span class="label">Link</span><ul class="meta-list"><li><a href="./projects/operation-outbreak/index.html">Case Study ↗</a></li></ul></div>
+                </div>
+                <div class="scroll-image-container js-anim-target">
+                    <img src="./img/OO-Cover.webp" alt="Operation Outbreak game interface showing Bluetooth-based pathogen spread simulation" loading="lazy">
+                </div>
+            </article>
+
+            <article class="project-item">
+                <div class="divider-line"></div>
+                <div class="project-text-grid">
+                    <div class="text-col-main">
+                        <h2>OO Admin Tool</h2>
+                        <p>A simulation management platform that streamlines the setup of complex outbreak parameters and player roles, enabling facilitators to monitor live interventions and system health as the outbreak unfolds.</p>
+                    </div>
+                    <div class="text-col-meta"><span class="label">Role</span><ul class="meta-list"><li>Dashboard Design</li><li>Task Management</li></ul></div>
+                    <div class="text-col-meta"><span class="label">Link</span><ul class="meta-list"><li><a rel="noopener noreferrer" href="./projects/oo-admin-tool/index.html">View More ↗</a></li></ul></div>
+                </div>
+                <div class="scroll-image-container js-anim-target">
+                    <img src="./img/OOAdminTool-2.webp" alt="Admin dashboard for managing outbreak simulation parameters and monitoring system health" loading="lazy">
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 2. WEB SECTION (4 Projects) -->
+    <section id="web" class="project-category theme-dark">
+        <div class="container">
+            <article class="project-item">
+                <div class="divider-line"></div>
+                <div class="project-text-grid">
+                    <div class="text-col-main">
+                        <h2>Purple Tree</h2>
+                        <p>Through image data processing and transformation, I created a website with kaleidoscopic effect to illustrate the multispectral camera sensing methodology for the Italian forest management office</p>
+                    </div>
+                    <div class="text-col-meta"><span class="label">Tech</span><ul class="meta-list"><li>Image Data Processing</li><li>Creative Coding (p5.js)</li></ul></div>
+                    <div class="text-col-meta"><span class="label">Link</span><ul class="meta-list"><li><a href="#">Upcoming ↗</a></li></ul></div>
+                </div>
+                <div class="scroll-image-container js-anim-target">
+                    <img src="./img/TreeCover2.gif" alt="Kaleidoscopic visualization of multispectral forest camera data with purple color processing" loading="lazy">
+                </div>
+            </article>
+
+            <article class="project-item">
+                <div class="divider-line"></div>
+                <div class="project-text-grid">
+                    <div class="text-col-main">
+                        <h2>Feeling Nature</h2>
+                        <p>An interactive, metaphor-based web visualization that tells using visual AI to present biophilia research and explore the human connection to nature</p>
+                    </div>
+                    <div class="text-col-meta"><span class="label">Tech</span><ul class="meta-list"><li>Data Viz Storytelling</li><li>Creative Coding (three.js)</li></ul></div>
+                    <div class="text-col-meta"><span class="label">Link</span><ul class="meta-list"><li><a target="_blank" rel="noopener noreferrer" href="https://senseable.mit.edu/feeling-nature/">Live ↗</a></li></ul></div>
+                </div>
+                <div class="scroll-image-container js-anim-target">
+                    <video width="100%" preload="metadata" autoplay muted loop playsinline>
+                        <source src="./img/FN-Coversmaller.mp4" type="video/mp4">
+                        <img src="./img/" alt="Interactive three.js visualization exploring biophilia and human-nature connection through AI">
+                    </video>
+                </div>
+            </article>
+
+            <article class="project-item">
+                <div class="divider-line"></div>
+                <div class="project-text-grid">
+                    <div class="text-col-main">
+                        <h2>A Dream Dog?</h2>
+                        <p>A scroll-telling piece that visualizes research on the genetic correlation between dog breeds, behavior, and physical traits, while emphasizing the individual of each dog!</p>
+                    </div>
+                    <div class="text-col-meta"><span class="label">Data Viz</span><ul class="meta-list"><li>Data Viz Storytelling</li><li>Creative Coding (d3.js)</li></ul></div>
+                    <div class="text-col-meta"><span class="label">Link</span><ul class="meta-list"><li><a target="_blank" rel="noopener noreferrer" href="https://yinadong.github.io/dog-behaviour-dashboard/">Live ↗</a></li></ul></div>
+                </div>
+                <div class="scroll-image-container js-anim-target">
+                    <video width="100%" preload="metadata" autoplay muted loop playsinline>
+                        <source src="./img/dog_smallerr.mp4" type="video/mp4">
+                        <img src="./img/" alt="Dog behavior data visualization showing genetic correlations between breeds and traits">
+                    </video>
+                </div>
+            </article>
+
+            <article class="project-item">
+                <div class="divider-line"></div>
+                <div class="project-text-grid">
+                    <div class="text-col-main">
+                        <h2>Fiberspace</h2>
+                        <p>An interactive web that introduces a scalable method for monitoring urban environments using fiber-optic networks as distributed acoustic sensing systems.</p>
+                    </div>
+                    <div class="text-col-meta"><span class="label">Tech</span><ul class="meta-list"><li>Data Viz Storytelling</li><li>Creative Coding (d3.js)</li></ul></div>
+                    <div class="text-col-meta"><span class="label">Link</span><ul class="meta-list"><li><a target="_blank" rel="noopener noreferrer" href="https://senseable.mit.edu/fiberspace/">Live ↗</a></li></ul></div>
+                </div>
+                <div class="scroll-image-container js-anim-target">
+                    <img src="./img/Fiberspace-cover2.gif" alt="Interactive visualization of fiber-optic acoustic sensing networks for urban monitoring" loading="lazy">
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 3. EXHIBITION SECTION (2 Projects) -->
+    <section id="exhibition" class="project-category theme-purple">
+        <div class="container">
+            <article class="project-item">
+                <div class="divider-line"></div>
+                <div class="project-text-grid">
+                    <div class="text-col-main">
+                        <h2>Biophilia Exhibitions</h2>
+                        <p>This exhibition transforms the invisible human–nature connection into immersive visual experiences through AI analysis, emotional responses, and a live-updating visualization system with sound. 
+                            It was exhibited at Seoul Smart Life Week in October 2025 and at the Info+ Conference in Boston in November 2025.
+                            </p>
+                    </div>
+                    <div class="text-col-meta"><span class="label">Type</span><ul class="meta-list"><li>Lead Design & Development</li><li>Exhibition Design</li><li>Backend Integration</li></ul></div>
+                    <div class="text-col-meta"><span class="label">Info</span><ul class="meta-list"><li><a target="_blank" rel="noopener noreferrer" href="https://informationplusconference.com/2025/exhibition_items/05_item/">Exhibition ↗</a></li></ul></div>
+                </div>
+                <div class="scroll-image-container js-anim-target">
+                    <img src="./img/FN_Exhibition.webp" alt="Biophilia exhibition installation showing immersive AI-powered nature visualization with sound" loading="lazy">
+                </div>
+                <div class="scroll-image-container js-anim-target">
+                    <img src="./img/Tree.gif" alt="Live-updating tree visualization responding to human emotional responses in exhibition" loading="lazy">
+                </div>
+            </article>
+
+            <article class="project-item">
+                <div class="divider-line"></div>
+                <div class="project-text-grid">
+                    <div class="text-col-main">
+                        <h2>Data Physicalization</h2>
+                        <p>A physical representation of commuting flows, designed to engage viewers in a gallery space and explore data physicalization methods.</p>
+                    </div>
+                    <div class="text-col-meta"><span class="label">Type</span><ul class="meta-list"><li>Design Research</li><li>Exhibition Prototype</li></ul></div>
+                    <div class="text-col-meta"><span class="label">Info</span><ul class="meta-list"><li><a target="_blank" rel="noopener noreferrer" href="https://yiviz.com/phy-viz">The Press ↗</a></li></ul></div>
+                </div>
+                <div class="scroll-image-container js-anim-target">
+                    <img src="./img/Physical.jpg" alt="Physical data sculpture representing commuting flow patterns in gallery exhibition" loading="lazy">
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-left">
+                <h3>My Contact</h3>
+                <p>Collaborating at the intersection of design, data, and code. Reach out for new ventures or just a coffee.</p>
+                <div class="contact-details">
+                    <strong>Email:</strong> <a href="mailto:yi.designwork@gmail.com">yi.designwork@gmail.com</a><br>
+                    <strong>Social:</strong> <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/yinan-dong/">LinkedIn</a><br>
+                    <strong>Based in:</strong> Boston
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <h3>Collaborators & Clients</h3>
+                <div class="marquee-container">
+                    <div class="marquee-track">
+                        <div class="client-logo">
+                            <img src="./img/clients/cdc-logo-tag-right (1).svg" alt="CDC">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/logo.png" alt="Broad Institute">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/MIT_logo.png" alt="MIT">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/MIT_logo.png" alt="Seoul AI Foundation">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/MBTA.svg.png" alt="MBTA">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/MassDOT_Logo.svg.png" alt="MassDOT">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/lightbackground_umasschanat (1).svg" alt="UMass Chan Medical School">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/mgh-logo-rgb (1).svg" alt="MGH">
+                        </div>
+                        
+                        <!-- Duplicate for seamless loop -->
+                        <div class="client-logo">
+                            <img src="./img/clients/cdc-logo-tag-right (1).svg" alt="CDC">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/logo.png" alt="Broad Institute">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/MIT_logo.png" alt="MIT">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/MIT_logo.png" alt="Seoul AI Foundation">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/MBTA.svg.png" alt="MBTA">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/MassDOT_Logo.svg.png" alt="MassDOT">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/lightbackground_umasschanat (1).svg" alt="UMass Chan Medical School">
+                        </div>
+                        <div class="client-logo">
+                            <img src="./img/clients/mgh-logo-rgb (1).svg" alt="MGH">
+                        </div>
+                       
+                    </div>
+                </div>
+               
+                <div class="label">Availability</div>
+                <p style="font-size: 14px; color: #666;">Booking freelance work for Q3 2026.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"> 
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </div>
+
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
