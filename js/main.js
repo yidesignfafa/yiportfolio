@@ -10,7 +10,7 @@
 
    /* --- PASSWORD PROTECTION --- */
    (function initPasswordGate() {
-       const PASSWORD = 'dyfafa26';
+       const PASSWORD = 'test0208';
        const SESSION_KEY = 'portfolio_auth';
 
        // Check if already authenticated this session
@@ -155,8 +155,8 @@
        }
        draw() {
            const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
-           g.addColorStop(0, `rgba(160, 210, 255, ${this.opacity* 0.3})`); //
-           g.addColorStop(0.4, `rgba(180, 225, 255, ${this.opacity * 0.9})`);//200, 180, 255
+           g.addColorStop(0, `rgba(180, 160, 255, ${this.opacity* 0.9})`); // blue (0, `rgba(160, 210, 255, ${this.opacity* 0.3})`)  purple (0, `rgba(180, 160, 255, ${this.opacity* 0.9})`)
+           g.addColorStop(0.4, `rgba(200, 180, 255, ${this.opacity * 0.3})`);//blue (0.4, `rgba(180, 225, 255, ${this.opacity * 0.9})`) purple  (0.4, `rgba(200, 180, 255, ${this.opacity * 0.3})`)
            g.addColorStop(1, 'rgba(255, 255, 255, 0)');
            ctx.fillStyle = g;
            ctx.beginPath();

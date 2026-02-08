@@ -4,6 +4,9 @@
    Design Philosophy: Minimalist, clean, modern with glassmorphism
    ================================================================ */
 
+/* --- FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 /* --- 0. PASSWORD PROTECTION OVERLAY --- */
 #password-overlay {
     position: fixed;
@@ -76,7 +79,7 @@
 
 .pw-form:focus-within {
     border-color: var(--accent);
-    box-shadow: 0 4px 24px rgba(6, 151, 196, 0.1);
+    box-shadow: 0 4px 24px var(--accent-glow);
 }
 
 #pw-input {
@@ -167,7 +170,9 @@ body {
     --gutter: 60px;
     --header-height: 60px;
     --max-content-width: 1400px;
-    --accent: #0697c4;
+    --accent: #6345ed;
+    --accent-light: #8b7af5;
+    --accent-glow: rgba(99, 69, 237, 0.3);
 }
 
 .container {
@@ -191,12 +196,27 @@ nav {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(99, 69, 237, 0.08);
     z-index: 1000;
 }
 
-.nav-logo { font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
+.nav-logo { 
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; 
+    font-size: 14px; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+}
 .nav-links { display: flex; gap: 30px; }
-.nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; text-decoration: none; color: inherit; }
+.nav-links a { 
+    font-size: 11px; 
+    font-weight: 500; 
+    letter-spacing: 0.5px; 
+    text-transform: uppercase; 
+    text-decoration: none; 
+    color: inherit;
+    transition: color 0.3s ease;
+}
 .nav-links a:hover { color: var(--accent); }
 
 /* --- 3. HERO SECTION --- */
@@ -249,6 +269,7 @@ nav {
 }
 
 .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(32px, 4vw, 48px);
     line-height: 1.2;
     font-weight: 400;
@@ -277,12 +298,18 @@ nav {
 
 .hero-menu a:hover { 
     opacity: 1; 
-    transform: translateX(10px); 
+    transform: translateX(10px);
+    color: var(--accent);
 }
 
 .hero-menu a span { 
     border-bottom: 1px solid rgba(0,0,0,0.2); 
-    padding-bottom: 2px; 
+    padding-bottom: 2px;
+    transition: border-color 0.4s ease;
+}
+
+.hero-menu a:hover span {
+    border-bottom-color: var(--accent);
 }
 
 .icon-svg { 
@@ -327,7 +354,19 @@ section.project-category { padding-top: 100px; padding-bottom: 20px; }
     align-items: start;
 }
 
-.text-col-main h2 { font-size: 32px; font-weight: 600; margin-bottom: 24px; letter-spacing: -0.01em; }
+.text-col-main h2 { 
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px; 
+    font-weight: 600; 
+    margin-bottom: 24px; 
+    letter-spacing: -0.01em;
+    transition: color 0.4s ease;
+    cursor: default;
+}
+
+.text-col-main h2:hover {
+    color: var(--accent);
+}
 .text-col-main p { font-size: 16px; line-height: 1.6; color: #555; max-width: 540px; }
 
 .text-col-meta { padding-top: 28px; }
@@ -371,10 +410,23 @@ section.project-category { padding-top: 100px; padding-bottom: 20px; }
 /* --- 6. FOOTER --- */
 footer { padding: 140px 0 100px; background: #fff; border-top: 1px solid #f0f0f0; overflow: hidden; }
 .footer-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 120px; }
-.footer-left h3 { font-size: 24px; margin-bottom: 25px; }
+.footer-left h3 { 
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px; 
+    margin-bottom: 25px;
+    font-weight: 600;
+}
 .footer-left p { font-size: 16px; line-height: 1.7; color: #555; margin-bottom: 40px; }
 .contact-details { font-size: 15px; line-height: 2.2; }
-.footer-right h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #999; margin-bottom: 40px; }
+.footer-right h3 { 
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px; 
+    text-transform: uppercase; 
+    letter-spacing: 1.5px; 
+    color: #999; 
+    margin-bottom: 40px;
+    font-weight: 600;
+}
 
 .marquee-container { width: 100%; overflow: hidden; background: #fafafa; padding: 40px 0; margin-bottom: 60px; border-radius: 8px; }
 .marquee-track { display: flex; width: max-content; animation: scrollMarquee 30s linear infinite; }
