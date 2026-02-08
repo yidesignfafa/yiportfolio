@@ -1,4 +1,9 @@
 /* --- 1. DESIGN TOKENS --- */
+
+/* --- FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
 * { 
     margin: 0; 
     padding: 0; 
@@ -12,7 +17,8 @@
     --max-content-width: 1400px;
     --text-main: #111;
     --text-muted: #555;
-    --accent: #0697c4;
+    --accent: #8b72e6;
+    --accent-purple: #6345ed;
     --bg-color: #ffffff;
     --mist-color-1: rgba(230, 240, 255, 0.6);
     --mist-color-2: rgba(240, 240, 240, 0.5);
@@ -54,12 +60,18 @@ nav {
 }
 
 .nav-logo { 
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700; 
     font-size: 14px; 
     letter-spacing: 1px; 
     text-transform: uppercase; 
     text-decoration: none; 
-    color: inherit; 
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: var(--accent-purple);
 }
 
 .nav-links { 
@@ -78,7 +90,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--accent);
+    color: var(--accent-purple);
 }
 
 /* --- 3. HERO & MIST --- */
@@ -141,6 +153,7 @@ header.project-hero {
 }
 
 h1 { 
+    font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(40px, 6vw, 84px); 
     line-height: 1.05; 
     font-weight: 600; 
@@ -193,7 +206,7 @@ h1 {
 }
 
 .meta-column a:hover {
-    color: var(--accent);
+    color: var(--accent-purple);
     text-decoration: underline;
     text-underline-offset: 3px;
 }
@@ -215,6 +228,7 @@ h1 {
 }
 
 h2 { 
+    font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(32px, 4vw, 48px); 
     font-weight: 600; 
     letter-spacing: -0.03em; 
@@ -387,8 +401,8 @@ footer {
 }
 
 .footer-cta a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
+    color: var(--accent-purple);
+    border-bottom-color: var(--accent-purple);
 }
 
 /* --- 9. FLOATING NAVIGATION BUTTONS --- */
