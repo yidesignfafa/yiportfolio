@@ -337,10 +337,10 @@ section.project-category { padding-top: 100px; padding-bottom: 20px; }
 .theme-dark .label { color: #666; }
 
 .theme-purple { background-color: #ffffff; color: #2D1B4D; }
-.theme-purple .divider-line { background-color: #2D1B4D !important; }
-.theme-purple .text-col-main p { color: #5a4b7a; }
-.theme-purple .meta-list li { color: #5a4b7a; }
-.theme-purple .label { color: #8a7baa; }
+.theme-purple .divider-line { background-color: #000 !important; }
+.theme-purple .text-col-main p { color: #555; }
+.theme-purple .meta-list li { color: #555; }
+.theme-purple .label { color: #111; }
 
 /* --- 5. PROJECT ITEMS --- */
 .project-item { margin-bottom: 180px; width: 100%; position: relative; }
@@ -373,7 +373,7 @@ section.project-category { padding-top: 100px; padding-bottom: 20px; }
 .label { font-size: 11px; font-weight: 700; margin-bottom: 14px; display: block; text-transform: uppercase; letter-spacing: 0.5px; color: #999; }
 .meta-list { list-style: none; }
 .meta-list li { font-size: 14px; line-height: 1.8; color: #555; }
-.meta-list a { text-decoration: underline; text-underline-offset: 3px; color: #111; transition: color 0.3s ease; }
+.meta-list a { text-decoration: underline; text-underline-offset: 3px; color: #111; transition: color 0.3s ease; font-variant-emoji: text; }
 .meta-list a:hover { color: var(--accent); }
 
 .scroll-image-container {
@@ -530,7 +530,21 @@ footer { padding: 140px 0 100px; background: #fff; border-top: 1px solid #f0f0f0
     .hero { padding-top: 100px; padding-bottom: 80px; }
     .hero h1 { font-size: 26px; margin-bottom: 40px; }
     .hero-menu { width: 100%; gap: 16px; }
-    .hero-menu a { font-size: 15px; gap: 12px; }
+    .hero-menu a { font-size: 15px; gap: 12px; opacity: 1; }
+
+    /* Remove hover effects on mobile (touch devices) */
+    .hero-menu a:hover {
+        opacity: 1;
+        transform: none;
+        color: #1a1a1a;
+    }
+    .hero-menu a:hover span {
+        border-bottom-color: rgba(0,0,0,0.2);
+    }
+    .hero-menu a:hover .icon-svg {
+        opacity: 0.6;
+        transform: none;
+    }
 
     /* Hide canvas on mobile for performance */
     .hero-bg-container { display: none; }

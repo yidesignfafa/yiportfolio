@@ -182,6 +182,54 @@ function updateStories(newIndex) {
 // Initialize stories on page load
 initStories();
 
+/* ================================================================
+   2b. STORIES SECTION - MOBILE SCROLL-TO-UPDATE
+
+   On mobile (<=768px), the stories use a horizontal scroll layout.
+   Instead of requiring a click to update the description text,
+   we use IntersectionObserver to detect which card is scrolled
+   into center view and update the text automatically.
+   ================================================================ */
+function initMobileStoryScroll() {
+    if (window.innerWidth > 768) return;
+
+    const stageEl = document.getElementById('stories-stage');
+    const cards = stageEl.querySelectorAll('.story-card');
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+                const index = Array.from(cards).indexOf(entry.target);
+                if (index !== -1 && index !== activeIndex) {
+                    activeIndex = index;
+                    // Update text
+                    descDisplay.style.opacity = 0;
+                    setTimeout(() => {
+                        descDisplay.innerText = storiesData[activeIndex].desc;
+                        descDisplay.style.opacity = 1;
+                    }, 150);
+                    // Update active visual state
+                    cards.forEach(c => c.classList.remove('active'));
+                    entry.target.classList.add('active');
+                }
+            }
+        });
+    }, {
+        root: stageEl,
+        threshold: 0.6
+    });
+
+    cards.forEach(card => observer.observe(card));
+}
+
+// Run after DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileStoryScroll);
+} else {
+    initMobileStoryScroll();
+}
+
 
 /* ================================================================
    3. SCROLL INTERACTIONS

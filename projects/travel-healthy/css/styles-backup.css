@@ -962,9 +962,30 @@ header.container {
         width: 100% !important;
     }
 
-    /* FIX: Videos — constrain to container */
+    /* FIX: status-update text readability on mobile */
+    .status-update p,
+    .status-update p[style*="font-size"] {
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+    }
+
+    /* FIX: Videos — constrain to container, ensure loading on mobile */
     .full-span-image video,
     header video {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    /* FIX: Last content-section video container */
+    .content-section.last-item .full-span-image,
+    .content-section.last-item .full-span-image[style*="height"] {
+        height: 220px !important;
+        background: #111;
+    }
+
+    .content-section.last-item .full-span-image video {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover;

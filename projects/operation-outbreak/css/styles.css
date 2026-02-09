@@ -965,11 +965,18 @@ header.container {
         width: 100% !important;
     }
 
+    /* FIX: status-update text readability on mobile */
+    .col-right p[style*="font-size: 0.75rem"] {
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+    }
+
     /* FIX: Videos — constrain to container */
     .full-span-image video,
     header video {
         width: 100% !important;
         height: 100% !important;
+        max-width: 100%;
         object-fit: cover;
     }
 
