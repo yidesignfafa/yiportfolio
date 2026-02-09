@@ -10,7 +10,7 @@
 
    /* --- PASSWORD PROTECTION --- */
    (function initPasswordGate() {
-       const PASSWORD = 'test0208';
+       const PASSWORD = 'ydinfo02';
        const SESSION_KEY = 'portfolio_auth';
 
        // Check if already authenticated this session
