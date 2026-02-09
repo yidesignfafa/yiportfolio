@@ -59,24 +59,50 @@ nav {
     border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 
-.nav-logo { 
+.nav-logo {
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700; 
-    font-size: 14px; 
-    letter-spacing: 1px; 
-    text-transform: uppercase; 
-    text-decoration: none; 
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    height: 1.2em;
 }
 
-.nav-logo:hover {
+.nav-logo span {
+    display: inline-block;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.35s ease;
+}
+
+.nav-logo::after {
+    content: attr(data-hover);
+    position: absolute;
+    left: 0;
+    top: 0;
     color: var(--accent-purple);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.35s ease;
+    white-space: nowrap;
 }
 
-.nav-links { 
-    display: flex; 
-    gap: 30px; 
+.nav-logo:hover span {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.nav-logo:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
 }
 
 .nav-links a { 
@@ -521,6 +547,9 @@ footer {
     }
 
     .nav-logo { font-size: 12px; }
+    /* Disable nav-logo hover text swap on mobile */
+    .nav-logo::after { display: none; }
+    .nav-logo:hover span { transform: none; opacity: 1; }
 
     .nav-links {
         display: none;
