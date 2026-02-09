@@ -71,7 +71,18 @@ nav {
     overflow: hidden;
     display: inline-block;
     height: 1.2em;
+    width: auto;
 }
+
+.nav-logo::before {
+    content: attr(data-hover);
+    display: block;
+    height: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    /* This ensures the container stays wide enough even when not hovering */
+}
+
 
 .nav-logo span {
     display: inline-block;
