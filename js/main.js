@@ -26,7 +26,7 @@
        };
 
        // Pre-computed hash of the password (no plaintext stored)
-       const PASSWORD_HASH = 2464706262333004;
+       const PASSWORD_HASH = 5049523805025423;
        const SESSION_KEY = 'portfolio_auth';
 
        // Check if already authenticated this session
