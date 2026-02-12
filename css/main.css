@@ -196,7 +196,6 @@ nav {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(99, 69, 237, 0.08);
     z-index: 1000;
 }
 
@@ -396,17 +395,23 @@ section.project-category { padding-top: 100px; padding-bottom: 20px; }
     align-items: start;
 }
 
-.text-col-main h2 { 
+.text-col-main h2 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 32px; 
-    font-weight: 600; 
-    margin-bottom: 24px; 
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 24px;
     letter-spacing: -0.01em;
     transition: color 0.4s ease;
-    cursor: default;
 }
 
-.text-col-main h2:hover {
+.text-col-main h2 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.4s ease;
+    cursor: pointer;
+}
+
+.text-col-main h2 a:hover {
     color: var(--accent);
 }
 .text-col-main p { font-size: 16px; line-height: 1.6; color: #555; max-width: 540px; }
@@ -701,3 +706,68 @@ img, video {
 }
 
 .no-download { -webkit-touch-callout: none; -webkit-user-select: none; }
+
+/* --- 8. CUSTOM CURSOR --- */
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10001;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.3s ease;
+    opacity: 0;
+    mix-blend-mode: normal;
+}
+
+.cursor-dot.visible {
+    opacity: 1;
+}
+
+.cursor-dot.hover {
+    width: 48px;
+    height: 48px;
+    background: rgba(99, 69, 237, 0.15);
+    border: 1.5px solid rgba(99, 69, 237, 0.4);
+}
+
+.cursor-dot-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cursor-dot-trail.visible {
+    opacity: 0.5;
+}
+
+/* Hide custom cursor on touch/mobile */
+@media (max-width: 768px) {
+    .cursor-dot,
+    .cursor-dot-trail {
+        display: none !important;
+    }
+}
+
+/* Hide default cursor on desktop when custom cursor active */
+@media (min-width: 769px) {
+    body.custom-cursor,
+    body.custom-cursor * {
+        cursor: none !important;
+    }
+}

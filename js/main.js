@@ -418,3 +418,81 @@
        e.preventDefault();
        return false;
    });
+
+   /* --- CUSTOM CURSOR --- */
+   (function initCustomCursor() {
+       // Skip on mobile / touch devices
+       if (window.innerWidth <= 768 || 'ontouchstart' in window) return;
+
+       const dot = document.getElementById('cursor-dot');
+       const trail = document.getElementById('cursor-dot-trail');
+       if (!dot || !trail) return;
+
+       let mouseX = 0, mouseY = 0;
+       let trailX = 0, trailY = 0;
+       let dotVisible = false;
+       let rafId = null;
+
+       // Clickable selectors for hover enlargement
+       const hoverSelectors = 'a, button, input, .scroll-top, .hero-menu a, .nav-links a, .nav-logo, .text-col-main h2 a, .meta-list a, #pw-submit, #pw-input';
+
+       document.addEventListener('mousemove', (e) => {
+           mouseX = e.clientX;
+           mouseY = e.clientY;
+
+           // Show cursor on first move
+           if (!dotVisible) {
+               dotVisible = true;
+               dot.classList.add('visible');
+               trail.classList.add('visible');
+               document.body.classList.add('custom-cursor');
+               startAnimation();
+           }
+
+           // Position main dot immediately (no lag)
+           dot.style.left = mouseX + 'px';
+           dot.style.top = mouseY + 'px';
+       });
+
+       // Trail follows with smooth lerp
+       function startAnimation() {
+           function animate() {
+               // Lerp trail toward mouse position
+               trailX += (mouseX - trailX) * 0.06;
+               trailY += (mouseY - trailY) * 0.06;
+
+               trail.style.left = trailX + 'px';
+               trail.style.top = trailY + 'px';
+
+               rafId = requestAnimationFrame(animate);
+           }
+           animate();
+       }
+
+       // Hover detection for clickable elements
+       document.addEventListener('mouseover', (e) => {
+           if (e.target.closest(hoverSelectors)) {
+               dot.classList.add('hover');
+           }
+       });
+
+       document.addEventListener('mouseout', (e) => {
+           if (e.target.closest(hoverSelectors)) {
+               dot.classList.remove('hover');
+           }
+       });
+
+       // Hide cursor when mouse leaves the window
+       document.addEventListener('mouseleave', () => {
+           dot.classList.remove('visible');
+           trail.classList.remove('visible');
+           dotVisible = false;
+       });
+
+       document.addEventListener('mouseenter', () => {
+           dot.classList.add('visible');
+           trail.classList.add('visible');
+           dotVisible = true;
+           startAnimation();
+       });
+   })();
