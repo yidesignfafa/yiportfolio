@@ -215,6 +215,85 @@
        canvasHeight = canvas.height = hero ? hero.offsetHeight : window.innerHeight;
    }
    
+   /* --- HERO KEYWORD IMAGE POP-UPS --- */
+   (function initHeroImagePop() {
+       // Skip on mobile / touch devices
+       if (window.innerWidth <= 768 || 'ontouchstart' in window) return;
+
+       const keywords = document.querySelectorAll('.hero-keyword');
+       const heroContainer = document.getElementById('hero-images');
+       if (!keywords.length || !heroContainer) return;
+
+       // Responsive scale factor: offsets shrink on smaller viewports
+       // 768px → 0.5, 1440px+ → 1.0
+       const vwScale = Math.min(1, Math.max(0.5, (window.innerWidth - 768) / (1440 - 768)));
+
+       // Multi-image map: each keyword can trigger 1 or 2 images
+       // sel = data-index on the <img>, dx/dy = offset from keyword center in px
+       const imageMap = {
+           0: [ // UX — A right-above, B left-below
+               { sel: '0',  dx: 160,  dy: -160 },
+               { sel: '0b', dx: -180, dy: 30 },
+           ],
+           1: [ // data visualization — A left-above, B right-below
+               { sel: '1',  dx: -200, dy: -120 },
+               { sel: '1b', dx: 180,  dy: 50 },
+           ],
+           2: [ // real-time systems — A right-above, B left-below
+               { sel: '2',  dx: 200,  dy: -20 },
+               { sel: '2b', dx: -180, dy: 60 },
+           ],
+           3: [ // insight
+               { sel: '3',  dx: -160, dy: 30 },
+           ],
+           4: [ // action
+               { sel: '4',  dx: 80,   dy: -120 },
+           ],
+           5: [ // delight — A right-below, B left-above
+               { sel: '5',  dx: 180,  dy: 80 },
+               { sel: '5b', dx: -180, dy: -80 },
+           ],
+       };
+
+       keywords.forEach(kw => {
+           const idx = parseInt(kw.dataset.img);
+           const entries = imageMap[idx];
+           if (!entries) return;
+
+           // Resolve image elements once
+           const imgs = entries.map(e => ({
+               el: document.querySelector('.hero-pop-img[data-index="' + e.sel + '"]'),
+               dx: e.dx,
+               dy: e.dy,
+           })).filter(e => e.el);
+
+           if (!imgs.length) return;
+
+           kw.addEventListener('mouseenter', () => {
+               const kwRect = kw.getBoundingClientRect();
+               const heroRect = heroContainer.getBoundingClientRect();
+
+               imgs.forEach(({ el, dx, dy }) => {
+                   const imgW = el.offsetWidth || 240;
+                   let x = kwRect.left - heroRect.left + kwRect.width / 2 + (dx * vwScale);
+                   let y = kwRect.top - heroRect.top + kwRect.height / 2 + (dy * vwScale);
+
+                   // Clamp within container bounds
+                   x = Math.max(0, Math.min(x, heroRect.width - imgW));
+                   y = Math.max(0, y);
+
+                   el.style.left = x + 'px';
+                   el.style.top = y + 'px';
+                   el.classList.add('visible');
+               });
+           });
+
+           kw.addEventListener('mouseleave', () => {
+               imgs.forEach(({ el }) => el.classList.remove('visible'));
+           });
+       });
+   })();
+
    /**
     * Calculate and cache target width
     */
@@ -434,7 +513,7 @@
        let rafId = null;
 
        // Clickable selectors for hover enlargement
-       const hoverSelectors = 'a, button, input, .scroll-top, .hero-menu a, .nav-links a, .nav-logo, .text-col-main h2 a, .meta-list a, #pw-submit, #pw-input';
+       const hoverSelectors = 'a, button, input, .scroll-top, .hero-menu a, .nav-links a, .nav-logo, .text-col-main h2 a, .meta-list a, #pw-submit, #pw-input, .hero-keyword';
 
        document.addEventListener('mousemove', (e) => {
            mouseX = e.clientX;
