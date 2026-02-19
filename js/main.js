@@ -453,45 +453,6 @@
    });
    
    
-   // Disable right-click
-   document.addEventListener('contextmenu', function(e) {
-       e.preventDefault();
-       return false;
-   });
-   
-   // Disable key shortcuts
-   document.addEventListener('keydown', function(e) {
-       // F12 - DevTools
-       if (e.keyCode === 123) {
-           e.preventDefault();
-           return false;
-       }
-       
-       // Ctrl+S - Save
-       if ((e.ctrlKey || e.metaKey) && e.keyCode === 83) {
-           e.preventDefault();
-           return false;
-       }
-       
-       // Ctrl+U - View Source
-       if ((e.ctrlKey || e.metaKey) && e.keyCode === 85) {
-           e.preventDefault();
-           return false;
-       }
-       
-       // Ctrl+Shift+I - DevTools
-       if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.keyCode === 73) {
-           e.preventDefault();
-           return false;
-       }
-       
-       // Ctrl+Shift+C - Inspect Element
-       if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.keyCode === 67) {
-           e.preventDefault();
-           return false;
-       }
-   });
-   
    // Disable drag and drop
    document.addEventListener('dragstart', function(e) {
        e.preventDefault();
