@@ -405,6 +405,7 @@ nav {
     max-width: 1000px;
     margin-bottom: 100px;
     letter-spacing: -0.02em;
+    mix-blend-mode: multiply;
 }
 
 .hero-portrait {
@@ -415,7 +416,6 @@ nav {
     object-fit: cover;
     vertical-align: -0.6em;
     margin-right: 0.15em;
-    mix-blend-mode: multiply;
     flex-shrink: 0;
 }
 
