@@ -155,7 +155,7 @@
            this.vy = (Math.random() - 0.5) * 0.3;
            this.baseRadius = 220 + Math.random() * 320;
            this.radius = this.baseRadius;
-           this.opacity = 0.08 + Math.random() * 0.5;
+           this.opacity = 0.25 + Math.random() * 0.55;
            this.pulseSpeed = 0.008 + Math.random() * 0.009;
            this.pulseOffset = Math.random() * Math.PI * 2;
        }
@@ -171,8 +171,8 @@
        }
        draw() {
            const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
-           g.addColorStop(0, `rgba(160, 210, 255, ${this.opacity* 0.9})`); // blue (0, `rgba(160, 210, 255, ${this.opacity* 0.3})`)  purple (0, `rgba(180, 160, 255, ${this.opacity* 0.9})`)
-           g.addColorStop(0.4, `rgba(180, 225, 255, ${this.opacity * 0.4})`);//blue (0.4, `rgba(180, 225, 255, ${this.opacity * 0.9})`) purple  (0.4, `rgba(200, 180, 255, ${this.opacity * 0.3})`)
+           g.addColorStop(0, `rgba(160, 210, 255, ${this.opacity * 1.0})`);
+           g.addColorStop(0.4, `rgba(180, 225, 255, ${this.opacity * 0.6})`);
            g.addColorStop(1, 'rgba(255, 255, 255, 0)');
            ctx.fillStyle = g;
            ctx.beginPath();
@@ -231,27 +231,17 @@
        // Multi-image map: each keyword can trigger 1 or 2 images
        // sel = data-index on the <img>, dx/dy = offset from keyword center in px
        const imageMap = {
-           0: [ // UX — A right-above, B left-below
-               { sel: '0',  dx: 160,  dy: -160 },
-               { sel: '0b', dx: -180, dy: 30 },
+           0: [ // insight — A right-above, B left-below
+               { sel: '0',  dx: 160,  dy: -180 },
+               { sel: '0b', dx: -180, dy: 50 },
            ],
-           1: [ // data visualization — A left-above, B right-below
-               { sel: '1',  dx: -200, dy: -120 },
-               { sel: '1b', dx: 180,  dy: 50 },
+           1: [ // action — A right-above, B left-below
+               { sel: '1',  dx: 180,  dy: -180 },
+               { sel: '4',  dx: -180, dy: 60 },
            ],
-           2: [ // real-time systems — A right-above, B left-below
-               { sel: '2',  dx: 200,  dy: -20 },
-               { sel: '2b', dx: -180, dy: 60 },
-           ],
-           3: [ // insight
-               { sel: '3',  dx: -160, dy: 30 },
-           ],
-           4: [ // action
-               { sel: '4',  dx: 80,   dy: -120 },
-           ],
-           5: [ // delight — A right-below, B left-above
-               { sel: '5',  dx: 180,  dy: 80 },
-               { sel: '5b', dx: -180, dy: -80 },
+           2: [ // delight — A right-below, B left-above
+               { sel: '2',  dx: 140,  dy: 60 },
+               { sel: '2b', dx: -120, dy: -100 },
            ],
        };
 
