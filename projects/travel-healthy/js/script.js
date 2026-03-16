@@ -24,7 +24,8 @@
 
    const carousels = {
     'hero-carousel': { index: 0, slides: 3 },
-    'carousel-1': { index: 0, slides: 3 }
+    'carousel-1': { index: 0, slides: 3 },
+    'carousel-consistency': { index: 0, slides: 2 }
 };
 
 /**
@@ -54,6 +55,7 @@ function moveCarousel(id, direction) {
 setInterval(() => {
     moveCarousel('hero-carousel', 1);
     moveCarousel('carousel-1', 1);
+    moveCarousel('carousel-consistency', 1);
 }, 4000);
 
 
@@ -108,7 +110,7 @@ setInterval(() => {
 ];
 
 
-let activeIndex = 2; // Start with center card (Index 2 in 0-4 array)
+let activeIndex = 4; // Start with center card (Design Review & Recognition)
 const stage = document.getElementById('stories-stage');
 const descDisplay = document.getElementById('story-desc');
 

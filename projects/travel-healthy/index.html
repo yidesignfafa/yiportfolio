@@ -133,7 +133,8 @@
                 </p>
                 <p>
                     <strong>The Core Problem:</strong> Patients, clinics, and researchers operated in disconnected silos, relying heavily on paper-based workflows and email or phone-based communication.
-                    This fragmentation led to high operational costs, inconsistent data, delayed reporting, and limited visibility into emerging health risks.
+                    This fragmentation led to high operational costs, unreliable data for surveillance, also slow for rapid public health response. 
+                    So we need a digital infrastructure that could scale.
                 </p>
             </div>
             
@@ -272,9 +273,9 @@
             </div>
         </div>
         <div class="full-span-image" style="margin-top: 40px; height: 650px; background: #111;">
-            <video width="100%" height="100%" preload="auto" autoplay muted loop playsinline webkit-playsinline style="border-radius: 8px; display: block;">
+            <video width="100%" height="100%" preload="auto" autoplay muted loop playsinline webkit-playsinline style="border-radius: 8px; display: block; object-fit: contain;">
                 <source src="./img/TH-Dashboard smaller.mp4" type="video/mp4">
-                <img src="./img/DashboardCover.webp" alt="Travel Health Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                <img src="./img/DashboardCover.webp" alt="Travel Health Demo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">
             </video>
         </div>
         <div class="status-update" style="margin-top: 40px; margin-bottom: 80px; width: 500px;">
@@ -282,6 +283,27 @@
             The mobile app is live and actively used across 18 travel clinics. The dashboard is currently in development, with early validation complete and performance metrics being collected as part of the next implementation phase.
         </p>
        </div> 
+    </section>
+    <section class="content-section container">
+        <div class="grid-2-col">
+            <div class="col-right">
+                <h2>Design Consistency</h2>
+                <p>
+                    To maintain visual consistency across the platform, I defined a UI foundation early in the project, including typography hierarchy, color themes and modes, spacing rules, custom icons, illustration elements, and standardized button states. 
+                    This foundation allowed new screens and features to follow a consistent structure instead of being designed independently.    <p>
+                    The same design system was also applied to supporting materials, including email templates and participant recruitment flyers, 
+                    ensuring a unified visual language across the product interface, communication assets, and clinical workflow.                </p>
+            </div>
+        </div>
+
+        <div class="full-span-image" style="background: #E8F5E9;">
+            <div class="carousel-container" id="carousel-consistency">
+                <button class="nav-arrow prev" onclick="moveCarousel('carousel-consistency', -1)">&#10094;</button>
+                <div class="carousel-slide active" style="background-image: url('./img/StyleGuide.webp');"></div>
+                <div class="carousel-slide" style="background-image: url('./img/homepagestyling.webp');"></div>
+                <button class="nav-arrow next" onclick="moveCarousel('carousel-consistency', 1)">&#10095;</button>
+            </div>
+        </div>
     </section>
 
     <!-- ===== MORE STORIES SECTION ===== -->

@@ -560,20 +560,16 @@ header.container {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    
+    border: 1px solid rgba(255, 255, 255, 0.3);    
     width: 50px;
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    
-    font-size: 1.2rem;
-    color: #fff;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
-    
+    z-index: 10;    
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
