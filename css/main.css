@@ -810,7 +810,36 @@ img, video {
 
 .no-download { -webkit-touch-callout: none; -webkit-user-select: none; }
 
-/* --- 8. CUSTOM CURSOR --- */
+/* --- 8. IMAGE HOVER TOOLTIP --- */
+.hover-tooltip {
+    position: fixed;
+    padding: 10px 24px;
+    background: rgba(99, 69, 237, 0.1);
+    border: 1.5px solid rgba(99, 69, 237, 0.4);
+    color: var(--accent);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    border-radius: 100px;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.hover-tooltip.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width: 768px) {
+    .hover-tooltip { display: none !important; }
+}
+
+/* --- 9. CUSTOM CURSOR --- */
 .cursor-dot {
     position: fixed;
     top: 0;

@@ -155,7 +155,7 @@
            this.vy = (Math.random() - 0.5) * 0.3;
            this.baseRadius = 220 + Math.random() * 320;
            this.radius = this.baseRadius;
-           this.opacity = 0.25 + Math.random() * 0.55;
+           this.opacity = 0.1 + Math.random() * 0.3;
            this.pulseSpeed = 0.008 + Math.random() * 0.009;
            this.pulseOffset = Math.random() * Math.PI * 2;
        }
@@ -171,8 +171,8 @@
        }
        draw() {
            const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
-           g.addColorStop(0, `rgba(160, 210, 255, ${this.opacity * 1.0})`);
-           g.addColorStop(0.4, `rgba(180, 225, 255, ${this.opacity * 0.6})`);
+           g.addColorStop(0, `rgba(160, 210, 255, ${this.opacity * 0.7})`);
+           g.addColorStop(0.4, `rgba(180, 225, 255, ${this.opacity * 0.35})`);
            g.addColorStop(1, 'rgba(255, 255, 255, 0)');
            ctx.fillStyle = g;
            ctx.beginPath();
@@ -191,7 +191,7 @@
        if (!canvas) return;
        ctx = canvas.getContext('2d');
        resizeCanvas();
-       for (let i = 0; i < 18; i++) particles.push(new SkyParticle());
+       for (let i = 0; i < 10; i++) particles.push(new SkyParticle());
        skyAnimationRunning = true;
        requestAnimationFrame(animateSky);
    }
@@ -448,6 +448,70 @@
        e.preventDefault();
        return false;
    });
+
+   /* --- IMAGE HOVER TOOLTIP + CLICK NAVIGATION --- */
+   (function initImageTooltip() {
+       if (window.innerWidth <= 768 || 'ontouchstart' in window) return;
+
+       const tooltip = document.getElementById('hover-tooltip');
+       if (!tooltip) return;
+
+       const digitalSection = document.getElementById('digital-product');
+       const portrait = document.querySelector('.hero-portrait');
+       const targets = [];
+
+       // Project images: find link from parent article's h2 > a
+       document.querySelectorAll('.scroll-image-container').forEach(el => {
+           const article = el.closest('article.project-item');
+           const link = article ? article.querySelector('h2 a') : null;
+           const href = link ? link.getAttribute('href') : null;
+           const isExternal = href && (href.startsWith('http') || link.getAttribute('target') === '_blank');
+           const isCase = digitalSection && digitalSection.contains(el);
+           targets.push({
+               el,
+               text: isCase ? 'View Case Study' : 'Go to Project Web',
+               href,
+               external: isExternal,
+           });
+       });
+
+       // Hero portrait
+       if (portrait) {
+           targets.push({ el: portrait, text: 'Hi, from Yi & Bao', href: null, external: false });
+       }
+
+       let active = false;
+
+       document.addEventListener('mousemove', (e) => {
+           if (active) {
+               tooltip.style.left = e.clientX + 'px';
+               tooltip.style.top = (e.clientY - 40) + 'px';
+           }
+       }, { passive: true });
+
+       targets.forEach(({ el, text, href, external }) => {
+           el.addEventListener('mouseenter', () => {
+               tooltip.textContent = text;
+               tooltip.classList.add('visible');
+               active = true;
+           });
+           el.addEventListener('mouseleave', () => {
+               tooltip.classList.remove('visible');
+               active = false;
+           });
+           // Click image to navigate
+           if (href) {
+               el.style.cursor = 'pointer';
+               el.addEventListener('click', () => {
+                   if (external) {
+                       window.open(href, '_blank', 'noopener,noreferrer');
+                   } else {
+                       window.location.href = href;
+                   }
+               });
+           }
+       });
+   })();
 
    /* --- CUSTOM CURSOR --- */
    (function initCustomCursor() {
